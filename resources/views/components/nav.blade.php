@@ -22,18 +22,31 @@
                 </li>
             </ul>
             <ul class="navbar-nav d-flex flex-row">
-                {{-- ACCEDI --}}
-                <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="{{ route('login') }}">
-                        <i class="fa-regular fa-user"></i>
-                    </a>
-                </li>
-                {{-- REGISTRATI --}}
-                <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="{{ route('register') }}">
-                        <i class="fa-solid fa-user-plus"></i>
-                    </a>
-                </li>
+                @auth                    
+                    {{-- ACCEDI --}}
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="{{ route('login') }}">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                    </li>                    
+                    {{-- LOGOUT --}}
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="#" onclick="event.preventDefault(); document.queryselector('#logout').submit();">Logout
+                            
+                        </a>
+                    </li>
+                    <form action="{{route('logout')}}" method="POST" id="logout">
+                        @csrf
+                    </form>
+                @endauth
+                @guest                    
+                    {{-- REGISTRATI --}}
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="{{ route('register') }}">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </a>
+                    </li>
+                @endguest
             </ul>
         </div>
     </div>
