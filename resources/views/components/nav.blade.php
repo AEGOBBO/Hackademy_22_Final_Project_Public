@@ -22,16 +22,10 @@
                 </li>
             </ul>
             <ul class="navbar-nav d-flex flex-row">
-                @auth                    
-                    {{-- ACCEDI --}}
-                    <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="{{ route('login') }}">
-                            <i class="fa-regular fa-user"></i>
-                        </a>
-                    </li>                    
+                @auth                                      
                     {{-- LOGOUT --}}
                     <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="#" onclick="event.preventDefault(); document.queryselector('#logout').submit();">Logout
+                        <a class="nav-link" href="#" onclick="event.preventDefault(); document.querySelector('#logout').submit();">Logout
                             
                         </a>
                     </li>
@@ -39,7 +33,13 @@
                         @csrf
                     </form>
                 @endauth
-                @guest                    
+                @guest
+                    {{-- ACCEDI --}}
+                    <li class="nav-item me-3 me-lg-0">
+                        <a class="nav-link" href="{{ route('login') }}">
+                            <i class="fa-regular fa-user"></i>
+                        </a>
+                    </li>                      
                     {{-- REGISTRATI --}}
                     <li class="nav-item me-3 me-lg-0">
                         <a class="nav-link" href="{{ route('register') }}">
