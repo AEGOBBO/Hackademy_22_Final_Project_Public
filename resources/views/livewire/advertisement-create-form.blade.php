@@ -3,9 +3,10 @@
         <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
             <form method="POST" action="{{route('advertisement.store')}}" wire:submit="store">
                 @csrf
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-
+                @if (session('message'))
+                    <div class="alert alert-success">
+                        {{session('message')}}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
                 <!-- TITOLO -->

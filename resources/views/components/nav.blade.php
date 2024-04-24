@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
     <div class="container">
-        <a class="navbar-brand" href="#!"><span style="color: #5e9693;">Psycho</span><span
+        <a class="navbar-brand" href="{{route('home')}}"><span style="color: #5e9693;">Presto.it</span><span
                 style="color: #fff;">logist</span></a>
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,9 +8,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#!">Offer</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#!">About</a>
                 </li>
