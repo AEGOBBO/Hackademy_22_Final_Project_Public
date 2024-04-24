@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdvertisementController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 
@@ -16,3 +17,5 @@ use App\Http\Controllers\PublicController;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('home');
 
+// CRUD Advertisement
+Route::get('/advertisement/create', [AdvertisementController::class, 'create'])->name('advertisement.create');

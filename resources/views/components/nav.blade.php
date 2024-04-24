@@ -22,14 +22,19 @@
                 </li>
             </ul>
             <ul class="navbar-nav d-flex flex-row">
-                @auth                                      
+                @auth
+                    <a class="nav-link" href="#" role="button"
+                         aria-expanded="false">
+                        Welcome {{ Auth::user()->name }}
+                    </a>
                     {{-- LOGOUT --}}
                     <li class="nav-item me-3 me-lg-0">
-                        <a class="nav-link" href="#" onclick="event.preventDefault(); document.querySelector('#logout').submit();">Logout
-                            
+                        <a class="nav-link" href="#"
+                            onclick="event.preventDefault(); document.querySelector('#logout').submit();">Logout
+
                         </a>
                     </li>
-                    <form action="{{route('logout')}}" method="POST" id="logout">
+                    <form action="{{ route('logout') }}" method="POST" id="logout">
                         @csrf
                     </form>
                 @endauth
@@ -39,7 +44,7 @@
                         <a class="nav-link" href="{{ route('login') }}">
                             <i class="fa-regular fa-user"></i>
                         </a>
-                    </li>                      
+                    </li>
                     {{-- REGISTRATI --}}
                     <li class="nav-item me-3 me-lg-0">
                         <a class="nav-link" href="{{ route('register') }}">
