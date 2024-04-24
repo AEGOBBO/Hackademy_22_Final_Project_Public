@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-            <form method="POST" action="{{route('advertisement.store')}}" wire:submit="store">
-                @csrf
+            <form wire:submit="store">
+                
                 @if (session('message'))
                     <div class="alert alert-success">
                         {{session('message')}}
