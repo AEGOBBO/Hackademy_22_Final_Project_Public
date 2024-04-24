@@ -10,6 +10,7 @@ class AdvertisementCreateForm extends Component
     public $title;
     public $description;
     public $price;
+    public $category;
 
     
     public function store(){

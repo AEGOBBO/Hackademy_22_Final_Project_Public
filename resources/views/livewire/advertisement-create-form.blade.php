@@ -25,6 +25,20 @@
                     <input type="number" id="price" class="form-control" wire:model="price" />
                     <label class="form-label" for="price">Prezzo</label>
                 </div>
+                <!-- CATEGORIA -->
+                <div data-mdb-input-init class="form-outline mb-4">
+                    <select wire:model.defer="category" id="category" class="form-control">
+                        <option value="">Scegli categoria</option>
+                        @foreach ($categories as $category)
+
+                            <option value="{{$category->id}}">
+                                {{$category->name}}
+                            </option>
+                            
+                        @endforeach
+
+                    </select>
+                </div>
 
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4">Inserisci</button>
