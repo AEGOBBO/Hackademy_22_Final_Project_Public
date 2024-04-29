@@ -34,7 +34,7 @@ class AdvertisementCreateForm extends Component
         $this->validate();
 
         $category=Category::find($this->category);
-        $category->advertisement()->create([
+        $category->advertisements()->create([
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,

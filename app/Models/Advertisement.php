@@ -11,10 +11,14 @@ class Advertisement extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'descriprion', 'price'];
+    protected $fillable = ['title', 'description', 'price'];
 
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }
