@@ -1,9 +1,9 @@
 <x-layout>
     <header class="min-vh-100">
         <div class="container ">
-            <div class="row">
+            <div class="row p-5">
                 <div class="col-12 d-flex justify-content-center align-items-center">
-                    <a role="button" class="btn btn-danger" href="{{route('advertisement.create')}}">Insersci annuncio</a>
+                    <a role="button" class="btn btn-custom" href="{{route('advertisement.create')}}">Insersci annuncio</a>
                 </div>
             </div>
         </div>

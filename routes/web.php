@@ -16,6 +16,7 @@ use App\Http\Controllers\PublicController;
 */
 
 Route::get('/', [PublicController::class, 'homepage'])->name('home');
+Route::get('/categoria/{category}', [PublicController::class, 'categoryShow'])->name('categoryShow');
 
 // CRUD Advertisement
 Route::get('/advertisement/create', [AdvertisementController::class, 'create'])->name('advertisement.create');
