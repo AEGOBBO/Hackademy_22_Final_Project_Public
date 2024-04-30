@@ -4,14 +4,17 @@
 
             @forelse ($category->advertisements as $advertisement)
                 <div class="col-12 col-md-3">
-                    <img src="https://picsum.photos/346" alt="foto" class="card-img-top p-3 rounded">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $advertisement->title }}</h5>
-                        <p class="card-text">{{ $advertisement->price }}</p>
-                        <p class="card-text">{{ $advertisement->description }}</p>
-                        <a href="" class="btn btn-danger">Dettaglio</a>
-                        <a href="" class="btn btn-success">Categoria: {{ $advertisement->category->name }}</a>
-                        <p class="card-footer">pubblicato il: {{ $advertisement->created_at->format('d/m/Y') }} - Autore: {{$advertisement->user->name ?? ''}}</p>
+                    <div class="card">
+                        <img src="https://picsum.photos/346" alt="foto" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $advertisement->title }}</h5>
+                            <p class="card-text">Prezzo {{ $advertisement->price }} &euro;</p>
+                            <p class="card-text">{{ Str::limit($advertisement->description, 30) }}</p>
+                            <a href="{{route('advertisement.show-detail', $advertisement)}}" class="btn btn-danger">Dettaglio</a>                            
+                        </div>
+                        <div class="card-footer">
+                            <p>{{ $advertisement->category->name }}</p>
+                        </div>
                     </div>
                 </div>
                 @empty

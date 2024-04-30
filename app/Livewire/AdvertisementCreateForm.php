@@ -5,12 +5,18 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Advertisement;
+use Illuminate\Support\Facades\Auth;
 
 class AdvertisementCreateForm extends Component
 {
+    // #[Validate('required', message: 'Il campo titolo è richiesto')]
+    // #[Validate('min:3', message: 'Il campo titolo deve essere minimo di 3 caratteri')]
     public $title;
+    // #[Validate('required|min:3|max:255')]
     public $description;
+    // #[Validate('required|numeric|gt:0')]
     public $price;
+    // #[Validate('required')]
     public $category;
 
     protected $rules = [
@@ -27,7 +33,15 @@ class AdvertisementCreateForm extends Component
         'numeric'=>'Il campo :attribute dev\'essere numerico',
         'gt:0'=>'Il campo :attribute dev\'essere maggiore di :gt',
         ];
-    
+
+    public function validationAttributes() 
+    {
+        return [
+            'title' => 'titolo',
+            'price' => 'prezzo',
+            'description' => 'descrizione',
+        ];
+    }
     
     public function store(){
         
@@ -38,6 +52,7 @@ class AdvertisementCreateForm extends Component
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
+            'user_id' => Auth::id(),
         ]);
 
         session()->flash('message', 'Annuncio inserito correttamente!');

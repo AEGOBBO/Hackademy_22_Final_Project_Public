@@ -20,3 +20,4 @@ Route::get('/categoria/{category}', [PublicController::class, 'categoryShow'])->
 
 // CRUD Advertisement
 Route::get('/advertisement/create', [AdvertisementController::class, 'create'])->name('advertisement.create');
+Route::get('/advertisement/show/{advertisement}', [AdvertisementController::class, 'show'])->name('advertisement.show-detail');

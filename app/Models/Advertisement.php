@@ -11,7 +11,7 @@ class Advertisement extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'price'];
+    protected $fillable = ['title', 'description', 'price', 'user_id'];
 
     public function category(): BelongsTo
     {
