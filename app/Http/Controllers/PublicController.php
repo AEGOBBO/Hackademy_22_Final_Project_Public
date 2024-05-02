@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class PublicController extends Controller
 {
     public function homepage() {
-        $advertisements=Advertisement::take(5)->get()->sortByDesc('created_at');
+        // $advertisements = Advertisement::take(5)->get()->sortByDesc('created_at');
+        $advertisements = Advertisement::where('is_accepted', true)->take(5)->get()->sortByDesc('created_at');
+
         return view('welcome',compact('advertisements'));
     }
 

@@ -94,11 +94,11 @@
 
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                <h5 class="text-uppercase">Links</h5>
+                <h5 class="text-uppercase">Link utili</h5>
 
                 <ul class="list-unstyled mb-0">
                     <li>
-                    <a href="#!" class="text-dark">Link 1</a>
+                        <a role="button" class="btn btn-custom" href="{{route('revisor.become')}}" class="text-dark">Diventa un revisore</a>
                     </li>
                     <li>
                     <a href="#!" class="text-dark">Link 2</a>

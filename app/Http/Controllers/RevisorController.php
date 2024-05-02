@@ -7,9 +7,13 @@ use Illuminate\Http\Request;
 
 class RevisorController extends Controller
 {
+    public function __contruct(){
+        $this->middleware('auth')->only('becomeRevisor');
+    }
+
     public function index(){
         $advertisement_to_check=Advertisement::where('is_accepted',null)->first();
-        return view('reveisor.index',compact('advertisement_to_check'));
+        return view('revisor.index',compact('advertisement_to_check'));
     }
     
     public function acceptAdevertisement(Advertisement $advertisement){
