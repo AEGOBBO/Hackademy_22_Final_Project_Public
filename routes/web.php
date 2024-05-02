@@ -30,4 +30,4 @@ Route::patch('/accept/advertisement/{advertisement}',[RevisorController::class,'
 Route::patch('/reject/advertisement/{advertisement}',[RevisorController::class,'rejectAdevertisement'])->name('revisor.reject');
 
 // Richiesta revisore
-Route::get('/revisor/becomeRevisor',[RevisorController::class,'becomeRevisor'])->name('revisor.become');
+Route::post('/revisor/becomeRevisor',[RevisorController::class,'becomeRevisor'])->name('revisor.become');
