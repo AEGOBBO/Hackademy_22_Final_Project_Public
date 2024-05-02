@@ -50,3 +50,9 @@ body{
     color: var(--cobalt);
     background-color: var(--yellow);
 }
+
+/* advertisement create form */
+.icon-custom-h2{
+    color: var(--bluewater);
+    font-size: x-large;
+}
