@@ -22,9 +22,13 @@
                 <li class="nav-item">
                     <a class="nav-link nav-title" href="#!">Team</a>
                 </li>
+                @if (Auth::user()->is_revisor)
                 <li class="nav-item">
-                    <a class="nav-link nav-title" href="#!">Contact</a>
+                    <a class="nav-link nav-title" href="{{route('revisor.index')}}">Zona Revisore
+                        <span class="">{{App\Models\Advertisement::toBeRevisonedCount()}}<span>Messaggi non letti</span></span>
+                    </a>
                 </li>
+                @endif
             </ul>
             <ul class="navbar-nav d-flex flex-row">
                 @auth

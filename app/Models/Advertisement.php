@@ -11,7 +11,7 @@ class Advertisement extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'price', 'user_id'];
+    protected $fillable = ['title', 'description', 'price', 'user_id','is_accepted'];
 
     public function category(): BelongsTo
     {
@@ -20,5 +20,13 @@ class Advertisement extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+    public function setAccepted($value){
+        $this->is_accepted=$value;
+        $this->save();
+        return true;
+    }
+    public static function toBeRevisonedCount(){
+        return Advertisement::where('is_accepted', null)->count();
     }
 }
