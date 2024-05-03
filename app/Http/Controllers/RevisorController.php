@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Artisan;
 
 class RevisorController extends Controller
 {
-    public function __contruct(){
-        $this->middleware('auth')->only('revisor.index');
+    public function __construct(){
+        $this->middleware('auth')->only('index');
     }
 
     public function index(){
