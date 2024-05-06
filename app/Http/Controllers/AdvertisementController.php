@@ -16,7 +16,8 @@ class AdvertisementController extends Controller
      */
     public function index()
     {
-        $advertisements = Advertisement::where('is_accepted', true)->paginate(6);
+        $advertisements = Advertisement::where('is_accepted', true)->latest();
+
         return view('advertisement.index', compact('advertisements'));
     }
 

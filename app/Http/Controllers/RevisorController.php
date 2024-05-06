@@ -17,7 +17,7 @@ class RevisorController extends Controller
     }
 
     public function index(){
-        $advertisement_to_check=Advertisement::where('is_accepted',null)->first();
+        $advertisement_to_check = Advertisement::where('is_accepted', null)->first();
 
         return view('revisor.index',compact('advertisement_to_check'));
     }
@@ -33,6 +33,10 @@ class RevisorController extends Controller
     }
 
     public function becomeRevisor(){
+        return view('revisor.become');
+    }
+
+    public function requestRevisor(){
         try {
             Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
         } catch (\Throwable $th) {
