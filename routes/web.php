@@ -32,3 +32,6 @@ Route::patch('/reject/advertisement/{advertisement}',[RevisorController::class,'
 // Richiesta revisore
 Route::post('/revisor/becomeRevisor',[RevisorController::class,'becomeRevisor'])->name('revisor.become');
 Route::get('/revisor/revisore{user}', [RevisorController::class,'makeRevisor'])->name('make.revisor');
+
+// Imposta Lingua
+Route::post('/lingua/{lang}',[PublicController::class,'setLanguage'])->name('setLocale');

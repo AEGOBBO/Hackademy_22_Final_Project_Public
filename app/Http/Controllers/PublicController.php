@@ -18,4 +18,10 @@ class PublicController extends Controller
     public function categoryShow(Category $category) {
         return view('categoryShow', compact('category'));
     }
+
+    public function setLanguage($lang){
+        session()->put('locale',$lang);
+        return redirect()->back();
+        
+    }
 }
