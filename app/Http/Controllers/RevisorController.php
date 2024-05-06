@@ -18,6 +18,7 @@ class RevisorController extends Controller
 
     public function index(){
         $advertisement_to_check=Advertisement::where('is_accepted',null)->first();
+
         return view('revisor.index',compact('advertisement_to_check'));
     }
     
@@ -34,7 +35,6 @@ class RevisorController extends Controller
     public function becomeRevisor(){
         try {
             Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
-            
         } catch (\Throwable $th) {
             return redirect()->back()->with('message', 'La tua richiesta non è andata a buon fine. Ritenta più tardi.');
         }
@@ -42,7 +42,7 @@ class RevisorController extends Controller
     }
 
     public function makeRevisor(User $user){
-        Artisan::call('presto:makeUserRevisor', ['email=>$user->email']);
+        Artisan::call('presto:makeUserRevisor', ["email" => $user->email]);
         return redirect('/')->with('message', 'Complimenti! L\'utente è diventato revisore');
     }
 }

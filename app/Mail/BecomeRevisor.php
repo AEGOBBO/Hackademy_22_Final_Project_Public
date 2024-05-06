@@ -42,7 +42,7 @@ class BecomeRevisor extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'revisor.become',
+            view: 'mail.revisor-mail',
         );
     }
 
