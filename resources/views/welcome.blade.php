@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row">
                 @foreach ($advertisements as $advertisement)
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-md-4 mb-3">
                     <div class="card">
                         <img src="https://picsum.photos/346" alt="foto" class="card-img-top">
                         <div class="card-body">

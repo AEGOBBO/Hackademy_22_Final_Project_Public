@@ -25,8 +25,8 @@
                 @auth
                 @if (Auth::user()->is_revisor)
                 <li class="nav-item">
-                    <a role="button" class="nav-link nav-title btn" href="{{route('revisor.index')}}">Zona Revisore
-                        <span class="">{{App\Models\Advertisement::toBeRevisonedCount()}}<span>Messaggi non letti</span></span>
+                    <a role="button" class="nav-link nav-title btn btn-sm position-relative" href="{{route('revisor.index')}}">Zona Revisore
+                        <span class="position-absolute top-0 start-100 translate-middle-relative">{{App\Models\Advertisement::toBeRevisonedCount()}}<span class="visually-hidden">Messaggi non letti</span></span>
                     </a>
                 </li>
                 @endif

@@ -1,11 +1,9 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12 text-center ">
-            <h2>Pubblica qui <i class="fa-solid fa-paw icon-custom-h2"></i></h2>
+<div class="container-fluid">
+    <div class="row w-100">
+        <div class="col-12 text-center">
+            <h2>Pubblica qui</h2>
         </div>
-    </div>
-    <div class="row ">
-        <div class="col-12 p-5  d-flex justify-content-center align-items-center ">
+        <div class="col-12 p-5 d-flex justify-content-center align-items-center">
             <form wire:submit="store">
                 @if (session('message'))
                 <div class="alert alert-success">
