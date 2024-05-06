@@ -12,14 +12,14 @@ class MakeUserRevisor extends Command
      *
      * @var string
      */
-    protected $signature = 'app:make-user-revisor{email}';
+    protected $signature = 'presto:makeUserRevisor {email}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'rendere utente revisore';
+    protected $description = 'Rendi utente revisore';
 
     public function __construct()
     {
@@ -31,12 +31,12 @@ class MakeUserRevisor extends Command
      */
     public function handle()
     {
-        $user=User::where('email',$this->argument('email'))->first();
+        $user = User::where('email', $this->argument('email'))->first();
         if (!$user) {
-            $this->error('utente non trovato');
+            $this->error('Utente non trovato');
             return;
         }
-        $user->is_revisor=true;
+        $user->is_revisor = true;
         $user->save();
         $this->info("L'utente {$user->name} è un revisore");
     }

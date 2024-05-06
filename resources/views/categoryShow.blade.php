@@ -1,7 +1,6 @@
 <x-layout>
     <div class="container min-vh-100">
         <div class="row">
-
             @forelse ($category->advertisements as $advertisement)
                 <div class="col-12 col-md-3">
                     <div class="card">
@@ -23,7 +22,6 @@
                     <h3>Pubblica subito il tuo annuncio <a href="{{route('advertisement.create')}}" class=" text-decoration-none text-reset">qui <i class="fa-solid fa-pen-fancy"></i></a></h3>
                 </div>
             @endforelse
-
-    </div>
+        </div>
     </div>
 </x-layout>
