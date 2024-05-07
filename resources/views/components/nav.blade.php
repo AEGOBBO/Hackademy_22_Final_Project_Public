@@ -7,21 +7,21 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle nav-title" href="#!" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
+                    <a class="nav-link dropdown-toggle nav-title" href="#!" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.allCategories')}}</a>
                     <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
                         @foreach ($categories as $category)
                         <li>
-                            <a href="{{ route('categoryShow', compact('category')) }}" class="dropdown-item">{{ $category->name }}</a>
+                            <a href="{{ route('categoryShow', compact('category')) }}" class="dropdown-item">{{__("ui.$category->name")}}</a>
                         </li>
                         @endforeach
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-title" href="{{route('advertisement.index')}}">Annunci</a>
+                    <a class="nav-link nav-title" href="{{route('advertisement.index')}}">{{__('ui.allAdvertisements')}}</a>
                 </li>
                 <div class="dropdown">
                     <a role="button" class="nav-link nav-title dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Lingue
+                        {{__('ui.allLanguages')}}
                     </a>
                     <ul class="dropdown-menu text-center">
                         <li class="dropdown-item">
@@ -40,19 +40,19 @@
                 <ul class="navbar-nav ms-auto">
                     @auth
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->name }}</a>
+                        <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.welcome')}}  {{ Auth::user()->name }}</a>
                         <ul class="dropdown-menu" aria-labelledby="profileDropdown">
                             @if (Auth::user()->is_revisor)
                             <li class="nav-item">
-                                <a role="button" class="nav-link position-relative" href="{{route('revisor.index')}}">Da revisionare
+                                <a role="button" class="nav-link position-relative" href="{{route('revisor.index')}}">{{__('ui.toBeRevised')}}
                                     <span class="position-absolute top-0 start-75 translate-middle-relative">{{App\Models\Advertisement::toBeRevisonedCount()}}
-                                        <span class="visually-hidden">Messaggi non letti</span>
+                                        <span class="visually-hidden">{{__('ui.allUnreadMessages')}}</span>
                                     </span>
                                 </a>
                             </li>
                             @else
                             <li class="nav-item">
-                                <a href="{{route('revisor.become')}}" class="nav-link">Lavora con noi</a>
+                                <a href="{{route('revisor.become')}}" class="nav-link">{{__('ui.workWithUs')}}</a>
                             </li>
                             @endif
                             {{-- LOGOUT --}}
@@ -69,18 +69,18 @@
                     @endauth
                     @guest
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profilo</a>
+                        <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.welcome')}}</a>
                         <ul class="dropdown-menu" aria-labelledby="profileDropdown">
                             {{-- ACCEDI --}}
                             <li class="nav-item me-3 me-lg-0">
                                 <a class="nav-link" href="{{ route('login') }}">
-                                    Accedi
+                                    {{__('ui.login')}}
                                 </a>
                             </li>
                             {{-- REGISTRATI --}}
                             <li class="nav-item me-3 me-lg-0">
                                 <a class="nav-link" href="{{ route('register') }}">
-                                    Registrati
+                                    {{__('ui.register')}}
                                 </a>
                             </li>
                         </ul>
