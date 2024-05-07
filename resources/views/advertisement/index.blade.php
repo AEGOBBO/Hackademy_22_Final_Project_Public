@@ -1,5 +1,6 @@
 <x-layout>
     <header class="min-vh-100">
+        @if (!isset($advertisements))
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
@@ -7,6 +8,16 @@
                 </div>
             </div>
         </div>
+        @else
+        <div class="container-fluid">
+            <div class="row">
+                <h3 class="text-center">Non sono presenti annunci</h3>
+                <div class="text-center w-100">
+                    <a role="button" class="btn btn-custom" href="{{route('advertisement.create')}}">Inserscine uno</a>
+                </div>
+            </div>
+        </div>
+        @endif
         <div class="container">
             <div class="row">
                 @foreach ($advertisements as $advertisement)

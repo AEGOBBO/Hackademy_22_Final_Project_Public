@@ -98,7 +98,7 @@
 
                 <ul class="list-unstyled mb-0">
                     <li>
-                        <a class="" href="{{route('revisor.become')}}" class="text-dark">Diventa un revisore</a>
+                    <a href="#!" class="text-dark">Link 1</a>
                     </li>
                     <li>
                     <a href="#!" class="text-dark">Link 2</a>

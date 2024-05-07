@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0 nav-custom">
     <div class="container">
         <a class="navbar-brand" href="{{ route('home') }}"><span class="nav-logo">Presto.it</span></a>
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,73 +10,84 @@
                     <a class="nav-link dropdown-toggle nav-title" href="#!" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
                     <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
                         @foreach ($categories as $category)
-                        <li><a href="{{ route('categoryShow', compact('category')) }}" class="dropdown-item">{{ $category->name }}</a>
+                        <li>
+                            <a href="{{ route('categoryShow', compact('category')) }}" class="dropdown-item">{{ $category->name }}</a>
                         </li>
                         @endforeach
                     </ul>
-
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-title" href="{{route('advertisement.index')}}">Annunci</a>
                 </li>
                 <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a role="button" class="nav-link nav-title dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Lingue
-                    </button>
+                    </a>
                     <ul class="dropdown-menu text-center">
                         <li class="dropdown-item">
-                            <x-_locale lang="it" nation='it' />
+                            <x-_locale lang="it" nation='it'/>
                         </li>
                         <li class="dropdown-item">
-                            <x-_locale lang="en" nation='gb' />
+                            <x-_locale lang="en" nation='gb'/>
                         </li>
                         <li class="dropdown-item">
-                            <x-_locale lang="es" nation='es' />
+                            <x-_locale lang="es" nation='es'/>
                         </li>
                     </ul>
                 </div>
-
-
-                @auth
-                @if (Auth::user()->is_revisor)
-                <li class="nav-item">
-                    <a role="button" class="nav-link nav-title btn btn-sm position-relative" href="{{route('revisor.index')}}">Zona Revisore
-                        <span class="position-absolute top-0 start-100 translate-middle-relative">{{App\Models\Advertisement::toBeRevisonedCount()}}<span class="visually-hidden">Messaggi non letti</span></span>
-                    </a>
-                </li>
-                @endif
-                @endauth
             </ul>
-            <ul class="navbar-nav d-flex flex-row">
-                @auth
-                <a class="nav-link" href="#" role="button" aria-expanded="false">
-                    Welcome {{ Auth::user()->name }}
-                </a>
-                {{-- LOGOUT --}}
-                <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="#" onclick="event.preventDefault(); document.querySelector('#logout').submit();">Logout
-
-                    </a>
-                </li>
-                <form action="{{ route('logout') }}" method="POST" id="logout">
-                    @csrf
-                </form>
-                @endauth
-                @guest
-                {{-- ACCEDI --}}
-                <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="{{ route('login') }}">
-                        <i class="fa-regular fa-user icon-custom"></i>
-                    </a>
-                </li>
-                {{-- REGISTRATI --}}
-                <li class="nav-item me-3 me-lg-0">
-                    <a class="nav-link" href="{{ route('register') }}">
-                        <i class="fa-solid fa-user-plus icon-custom"></i>
-                    </a>
-                </li>
-                @endguest
-            </ul>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto">
+                    @auth
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{ Auth::user()->name }}</a>
+                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                            @if (Auth::user()->is_revisor)
+                            <li class="nav-item">
+                                <a role="button" class="nav-link position-relative" href="{{route('revisor.index')}}">Da revisionare
+                                    <span class="position-absolute top-0 start-75 translate-middle-relative">{{App\Models\Advertisement::toBeRevisonedCount()}}
+                                        <span class="visually-hidden">Messaggi non letti</span>
+                                    </span>
+                                </a>
+                            </li>
+                            @else
+                            <li class="nav-item">
+                                <a href="{{route('revisor.become')}}" class="nav-link">Lavora con noi</a>
+                            </li>
+                            @endif
+                            {{-- LOGOUT --}}
+                            <li class="nav-item me-3 me-lg-0">
+                                <a class="nav-link" href="#" onclick="event.preventDefault(); document.querySelector('#logout').submit();">
+                                    Logout
+                                </a>
+                            </li>
+                            <form action="{{ route('logout') }}" method="POST" id="logout">
+                                @csrf
+                            </form>
+                        </ul>
+                    </li>
+                    @endauth
+                    @guest
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profilo</a>
+                        <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                            {{-- ACCEDI --}}
+                            <li class="nav-item me-3 me-lg-0">
+                                <a class="nav-link" href="{{ route('login') }}">
+                                    Accedi
+                                </a>
+                            </li>
+                            {{-- REGISTRATI --}}
+                            <li class="nav-item me-3 me-lg-0">
+                                <a class="nav-link" href="{{ route('register') }}">
+                                    Registrati
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    @endguest
+                </ul>
+            </div>
         </div>
     </div>
 </nav>

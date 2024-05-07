@@ -1,7 +1,9 @@
 <x-layout>
-    <div class="container">
+    <div class="container min-vh-100">
         <div class="row">
             <div class="col-12">
+                <h1 class="text-center">Registrati al portale</h1>
+                <h2 class="text-center mb-5 pb-5">Inserisci i tuoi dati nel form sottostante</h2>
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
                     <!-- 2 column grid layout with text inputs for the first and last names -->
@@ -35,7 +37,7 @@
                     </div>
             
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-4">Registrati</button>
+                    <button type="submit" class="btn btn-custom mb-4">Registrati</button>
                 </form>
             </div>
         </div>

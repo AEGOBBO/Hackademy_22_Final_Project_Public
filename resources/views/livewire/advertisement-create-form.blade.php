@@ -21,14 +21,14 @@
                         @enderror
                     </div>
     
-                <!-- IMMAGINE -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                    <label class="form-label" for="title">Titolo</label>
-                    <input type="text" id="title" class="form-control" wire:model.blur="title" />
-                    @error('title')
-                    {{$message}}
-                    @enderror
-                </div>
+                    <!-- IMMAGINE -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <label class="form-label" for="title">Immagine</label>
+                        <input type="text" id="title" class="form-control" wire:model.blur="title" />
+                        @error('title')
+                        {{$message}}
+                        @enderror
+                    </div>
 
                     <!-- DESCRIZIONE -->
                     <div data-mdb-input-init class="form-outline mb-4">

@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row">
                 <di class="col-12 text-center mb-5">
-                    <h1>{{$advertisement_to_check ? 'Annuncio da revisionare' : 'non ci sono annunci da revisionare'}}</h1>
+                    <h1>{{$advertisement_to_check ? 'Annuncio da revisionare' : 'Non ci sono annunci da revisionare'}}</h1>
                 </di>
             </div>
         </div>
