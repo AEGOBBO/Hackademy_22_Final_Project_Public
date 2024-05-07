@@ -1,5 +1,28 @@
 <?php
 return [
-    'allAdvertisements' => 'Qui i nostri annunci!'
+    'allAdvertisements' => 'Annunci',
+    'allCategories' => 'Categorie',
+    'Abbigliamento' => 'Abbigliamento',
+    'Tavole' => 'Tavole', 
+    'Accessori' => 'Accessori', 
+    'Libri' => 'Libri', 
+    'Videogiochi' => 'Videogiochi', 
+    'Mute' => 'Mute', 
+    'Gadget' => 'Gadget', 
+    'Videocamere' => 'Videocamere', 
+    'Collezionismo' => 'Collezionismo',
+    'toBeRevised' => 'In attesa di revisione ',
+    'allUnreadMessages' => 'Messaggi non letti ',
+    'workWithUs' => 'Lavora con noi',
+    'login' => 'Accedi',
+    'register' => 'Registrati',
+    'welcome' => 'Benvenutə',    
+    'welcomeOn' => 'Benvenuti su',
+    'addAdvertisement' => 'Aggiungi annuncio',
+    'noAdvertisement' => 'Non ci sono ancora annunci',
+    'adDetail' => 'Dettagli',    
+    'Category' => 'Categoria',
+    'adPrice' => 'Prezzo',
+    'publishAdvertisement' => 'Pubblica il tuo annuncio ',
 
 ];

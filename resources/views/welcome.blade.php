@@ -3,10 +3,9 @@
         <div class="container ">
             <div class="row">
                 <div class="col-12 d-flex justify-content-center align-items-center d-flex flex-column">
-                    <h1 class="text-center">Benvenuto su Presto.it</h1>
-                    <h2 class="text-center mb-5">Il tuo sito di fiducia dedicato al marketing</h2>
+                    <h1 class="text-center p-5">{{__('ui.welcomeOn')}} Presto.it <i class="fa-solid fa-person-swimming"></i></h1>
                     <div class="justify-content-center mb-5">
-                        <a role="button" class="btn btn-custom" href="{{route('advertisement.create')}}">Insersci annuncio</a>
+                        <a role="button" class="btn btn-custom" href="{{route('advertisement.create')}}">{{__('ui.addAdvertisement')}}</a>
                     </div>
                 </div>
             </div>
@@ -21,14 +20,14 @@
                             <h5 class="card-title">{{$advertisement->title}}</h5>
                             <p class="card-text">{{$advertisement->price}}</p>
                             <p class="card-text">{{$advertisement->description}}</p>
-                            <a href="{{route('advertisement.show-detail', $advertisement)}}" class="btn btn-danger">Dettaglio</a>
-                            <a href="{{route('categoryShow', $advertisement->category)}}" class="btn btn-success">Categoria: {{$advertisement->category->name}}</a>
+                            <a href="{{route('advertisement.show-detail', $advertisement)}}" class="btn btn-danger">{{__('ui.adDetail')}}</a>
+                            <a href="{{route('categoryShow', $advertisement->category)}}" class="btn btn-success">{{__('ui.Category')}} {{__("ui." . $advertisement->category->name)}} </a>
                         </div>
                     </div>
                 </div>
                 @empty
                 <div class="col-12 col-md-4 mb-3 w-100">
-                    <h1 class="text-center">Non ci sono annunci da mostrare!</h1>
+                    <h1 class="text-center">{{__('ui.noAdvertisement')}}</h1>
                 </div>
                 @endforelse
             </div>

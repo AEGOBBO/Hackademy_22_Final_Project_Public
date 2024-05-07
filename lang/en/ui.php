@@ -1,5 +1,28 @@
 <?php
 return [
-    'allAdvertisements' => 'Here all our advertisements!'
+    'allAdvertisements' => 'Advertisements',
+    'allCategories' => 'Categories',
+    'Abbigliamento' => 'Apparel',
+    'Tavole' => 'Boards', 
+    'Accessori' => 'Accessories', 
+    'Libri' => 'Books', 
+    'Videogiochi' => 'Videogames', 
+    'Mute' => 'Wetsuits', 
+    'Gadget' => 'Gadget', 
+    'Videocamere' => 'Cameras', 
+    'Collezionismo' => 'Collecting',
+    'toBeRevised' => 'To be reviewed ',
+    'allUnreadMessages' => 'Unread messages ',
+    'workWithUs' => 'Work with us',
+    'login' => 'Login',
+    'register' => 'Register',
+    'welcome' => 'Welcome',
+    'welcomeOn' => 'Welcome on',
+    'addAdvertisement' => 'Add advertisement',
+    'noAdvertisement' => 'No advertisement uploaded yet',
+    'adDetail' => 'Details',
+    'Category' => 'Category',
+    'adPrice' => 'Price',
+    'publishAdvertisement' => 'Upload your advertisement ',
 
 ];

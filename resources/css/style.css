@@ -60,3 +60,13 @@ body{
     color: var(--bluewater);
     font-size: x-large;
 }
+
+/* FOOTER */
+.footer-custom{
+    backdrop-filter: blur(15px);
+    box-shadow: 1px 1px 8px 1px var(--ceruleolight);
+}
+
+.footer-title{
+    color: var(--ceruleo);
+}

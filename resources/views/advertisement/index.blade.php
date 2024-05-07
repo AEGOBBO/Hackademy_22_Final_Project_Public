@@ -1,19 +1,19 @@
 <x-layout>
     <header class="min-vh-100">
-        @if (!isset($advertisements))
+        @if (count($advertisements))
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-center">Ecco tutti gli annunci</h1>
+                    <h1 class="text-center">{{__('ui.allAdvertisements')}}</h1>
                 </div>
             </div>
         </div>
         @else
         <div class="container-fluid">
             <div class="row">
-                <h3 class="text-center">Non sono presenti annunci</h3>
+                <h3 class="text-center">{{__('ui.noAdvertisements')}}</h3>
                 <div class="text-center w-100">
-                    <a role="button" class="btn btn-custom" href="{{route('advertisement.create')}}">Inserscine uno</a>
+                    <a role="button" class="btn btn-custom" href="{{route('advertisement.create')}}">{{__('ui.publishAdvertisements')}}</a>
                 </div>
             </div>
         </div>
@@ -29,8 +29,8 @@
                             <p class="card-text">{{$advertisement->price}}</p>
                             <p class="card-text">{{$advertisement->description}}</p>
                             
-                            <a href="{{route('advertisement.show-detail', $advertisement)}}" class="btn btn-danger">Dettaglio</a>
-                            <a href="{{route('categoryShow', $advertisement->category)}}" class="btn btn-success">Categoria: {{$advertisement->category->name}}</a>
+                            <a href="{{route('advertisement.show-detail', $advertisement)}}" class="btn btn-danger">{{__('ui.adDetail')}}</a>
+                            <a href="{{route('categoryShow', $advertisement->category)}}" class="btn btn-success">{{__('ui.Category')}} {{__("ui." . $advertisement->category->name)}}</a>
                         </div>
                     </div>
                 </div>

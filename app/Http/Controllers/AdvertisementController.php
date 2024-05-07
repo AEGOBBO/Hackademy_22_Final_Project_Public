@@ -16,7 +16,7 @@ class AdvertisementController extends Controller
      */
     public function index()
     {
-        $advertisements = Advertisement::where('is_accepted', true)->latest();
+        $advertisements = Advertisement::where('is_accepted', true)->orderBy('created_at','desc')->get();
 
         return view('advertisement.index', compact('advertisements'));
     }
