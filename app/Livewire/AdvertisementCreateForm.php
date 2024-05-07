@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Image;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Advertisement;
@@ -16,19 +17,21 @@ class AdvertisementCreateForm extends Component
     public $title;
     // #[Validate('required|min:3|max:255')]
     public $description;
-    public $temporary_images=[];
-    public $image=[];
+    public $temporary_images;
+    public $images=[];
+    public $image;
     // #[Validate('required|numeric|gt:0')]
     public $price;
     // #[Validate('required')]
     public $category;
+    public $advertisement;
 
     protected $rules = [
         'title'=>'required|min:3',
         'description'=>'required|min:3|max:255',
         'price'=>'required|numeric|gt:0',
         'category'=>'required',
-        'image.*'=>'image|max:1536',
+        'images.*'=>'image|max:1536',
         'temporary_images.*'=>'image|max:1536',
         ];
 
@@ -36,8 +39,9 @@ class AdvertisementCreateForm extends Component
         'required'=>'Il campo :attribute è richiesto',
         'min'=>'Il campo :attribute deve contenere :min caratteri',
         'max'=>'Il campo :attribute deve contenere :max caratteri',
-        'image.*.max'=>'L\'immagine a caricare non può superare i :max Kb',
+        'images.*.max'=>'L\'immagine a caricare non può superare i :max Kb',
         'temporary_images.*.max'=>'L\'immagine a caricare non può superare i :max Kb',
+        'temporary_images.*.image'=>'I file devono essere immagini',
         'numeric'=>'Il campo :attribute dev\'essere numerico',
         'gt:0'=>'Il campo :attribute dev\'essere maggiore di :gt',
         'image'=>'Il campo :attribute dev\'essere di tipo immagine',
@@ -56,17 +60,42 @@ class AdvertisementCreateForm extends Component
         
         $this->validate();
 
-        $category=Category::find($this->category);
-        $category->advertisements()->create([
-            'title' => $this->title,
-            'description' => $this->description,
-            'price' => $this->price,
+        //$category=Category::find($this->category);
+        $this->advertisement=Category::find($this->category)->advertisements()->create($this->validate());
+        if(count($this->images)){
+            foreach($this->images as $image){
+                $this->advertisement->images()->create([
+                    'path'=>$image->store('images', 'public')
+                ]);
+            }
+        }
+        
+        $this->advertisement->update([
+            // 'title' => $this->title,
+            // 'description' => $this->description,
+            // 'price' => $this->price,
             'user_id' => Auth::id(),
         ]);
 
         session()->flash('message', 'Annuncio inserito correttamente!');
 
         $this->reset();
+    }
+
+    public function updatedTemporaryImages(){
+        if($this->validate([
+            'temporary_images.*'=>'image|max:1536',
+        ])){
+            foreach($this->temporary_images as $image){
+                $this->images[]=$image;
+            }
+        }
+    }
+
+    public function removeImage($key){
+        if(in_array($key, array_keys($this->images))){
+            unset($this->images[$key]);
+        }
     }
 
     public function render()

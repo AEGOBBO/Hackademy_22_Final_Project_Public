@@ -5,7 +5,7 @@
         </div>
         <div class="col-12 p-5 d-flex justify-content-center align-items-center">
             <div class="col-12 col-md-8">
-                <form wire:submit="store">
+                <form wire:submit="store" enctype="multipart/form-data">
                     @if (session('message'))
                     <div class="alert alert-success">
                         {{session('message')}}
@@ -23,12 +23,32 @@
     
                     <!-- IMMAGINE -->
                     <div data-mdb-input-init class="form-outline mb-4">
-                        <label class="form-label" for="title">Immagine</label>
-                        <input type="text" id="title" class="form-control" wire:model.blur="title" />
-                        @error('title')
+                        <label class="form-label" for="temporary_images">Immagini</label>
+                        <input type="file" id="temporary_images" multiple class="form-control @error('temporary_images.*') is-invalid @enderror" wire:model="temporary_images" placeholder="Inserisci le immagini qui"/>
+                        @error('temporary_images')
                         {{$message}}
                         @enderror
                     </div>
+                    @if(!empty($images))
+                        <div class="row">
+                            <div class="col-12">
+                                <p>Photo Preview</p>
+                                <div class="row border border-4 border-info shadow rounded py-4">
+                                    @foreach ($images as $key=>$image)
+
+                                        <div class="col my-3 ">
+                                            <div class="img-preview mx-auto shadow rounded" style="height: 20vh; width: 15vh; background-image: url({{$image->temporaryUrl()}});">
+                                                
+                                            </div>
+                                            <button class="btn btn-danger shadow d-block text-center mt-2 mx-auto" wire:click="removeImage({{$key}})">Cancella</button>
+                                        </div>
+                                        
+                                    @endforeach
+
+                                </div>
+                            </div>
+                        </div>
+                    @endif
 
                     <!-- DESCRIZIONE -->
                     <div data-mdb-input-init class="form-outline mb-4">
