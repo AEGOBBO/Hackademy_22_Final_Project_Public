@@ -11,7 +11,6 @@ return [
     'Gadget' => 'Gadget', 
     'Videocamere' => 'Videocamere', 
     'Collezionismo' => 'Collezionismo',
-    'allLanguages' => 'Lingue',
     'toBeRevised' => 'In attesa di revisione ',
     'allUnreadMessages' => 'Messaggi non letti ',
     'workWithUs' => 'Lavora con noi',

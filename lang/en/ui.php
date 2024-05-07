@@ -11,7 +11,6 @@ return [
     'Gadget' => 'Gadget', 
     'Videocamere' => 'Cameras', 
     'Collezionismo' => 'Collecting',
-    'allLanguages' => 'Language',
     'toBeRevised' => 'To be reviewed ',
     'allUnreadMessages' => 'Unread messages ',
     'workWithUs' => 'Work with us',

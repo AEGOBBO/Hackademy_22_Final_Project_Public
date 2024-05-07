@@ -23,23 +23,7 @@
                     <a class="nav-link nav-title"
                         href="{{ route('advertisement.index') }}">{{ __('ui.allAdvertisements') }}</a>
                 </li>
-                <div class="dropdown">
-                    <a role="button" class="nav-link nav-title dropdown-toggle" type="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ __('ui.allLanguages') }}
-                    </a>
-                    <ul class="dropdown-menu text-center">
-                        <li class="dropdown-item">
-                            <x-_locale lang="it" nation='it' />
-                        </li>
-                        <li class="dropdown-item">
-                            <x-_locale lang="en" nation='gb' />
-                        </li>
-                        <li class="dropdown-item">
-                            <x-_locale lang="es" nation='es' />
-                        </li>
-                    </ul>
-                </div>
+                
             </ul>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
@@ -98,6 +82,24 @@
                             </ul>
                         </li>
                     @endguest
+                    {{-- LINGUE --}}
+                    <div class="dropdown">
+                        <a role="button" class="nav-link nav-title dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-globe"></i>
+                        </a>
+                        <ul class="dropdown-menu text-center">
+                            <li class="dropdown-item">
+                                <x-_locale lang="it" nation='it' />
+                            </li>
+                            <li class="dropdown-item">
+                                <x-_locale lang="en" nation='gb' />
+                            </li>
+                            <li class="dropdown-item">
+                                <x-_locale lang="es" nation='es' />
+                            </li>
+                        </ul>
+                    </div>
                 </ul>
             </div>
         </div>
