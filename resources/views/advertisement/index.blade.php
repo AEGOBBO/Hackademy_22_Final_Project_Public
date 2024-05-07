@@ -1,6 +1,6 @@
 <x-layout>
     <header class="min-vh-100">
-        @if (!isset($advertisements))
+        @if (count($advertisements))
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
