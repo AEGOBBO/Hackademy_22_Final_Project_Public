@@ -23,5 +23,7 @@ return [
     'noAdvertisement' => 'Non ci sono ancora annunci',
     'adDetail' => 'Dettagli',    
     'Category' => 'Categoria',
+    'adPrice' => 'Prezzo',
+    'publishAdvertisement' => 'Pubblica il tuo annuncio ',
 
 ];

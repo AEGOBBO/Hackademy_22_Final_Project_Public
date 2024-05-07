@@ -23,5 +23,7 @@ return [
     'noAdvertisement' => 'No hay anuncios todavia',
     'adDetail' => 'Detalles',
     'Category' => 'Categoria',
+    'adPrice' => 'Precio',
+    'publishAdvertisement' => 'Sube tu anuncio ',
 
 ];

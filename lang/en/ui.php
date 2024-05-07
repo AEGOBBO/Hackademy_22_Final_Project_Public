@@ -23,5 +23,7 @@ return [
     'noAdvertisement' => 'No advertisement uploaded yet',
     'adDetail' => 'Details',
     'Category' => 'Category',
+    'adPrice' => 'Price',
+    'publishAdvertisement' => 'Upload your advertisement ',
 
 ];
