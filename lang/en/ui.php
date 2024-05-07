@@ -18,4 +18,10 @@ return [
     'login' => 'Login',
     'register' => 'Register',
     'welcome' => 'Welcome',
+    'welcomeOn' => 'Welcome on',
+    'addAdvertisement' => 'Add advertisement',
+    'noAdvertisement' => 'No advertisement uploaded yet',
+    'adDetail' => 'Details',
+    'Category' => 'Category',
+
 ];

@@ -17,6 +17,11 @@ return [
     'workWithUs' => 'Lavora con noi',
     'login' => 'Accedi',
     'register' => 'Registrati',
-    'welcome' => 'Benvenuti',
+    'welcome' => 'Benvenutə',    
+    'welcomeOn' => 'Benvenuti su',
+    'addAdvertisement' => 'Aggiungi annuncio',
+    'noAdvertisement' => 'Non ci sono ancora annunci',
+    'adDetail' => 'Dettagli',    
+    'Category' => 'Categoria',
 
 ];
