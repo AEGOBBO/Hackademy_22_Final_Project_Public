@@ -6,7 +6,7 @@
             </div>
         </div>
     </header>
-    <main class="container">
+    <main class="container min-vh-100">
         <div class="row">
             <div class="col-12 col-md-6">
                 {{-- carosello --}}

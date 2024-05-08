@@ -13,7 +13,6 @@
                 <div class="col-12">
                     <div id="carouselExampleIndicators" class="carousel slide">
                         @if($advertisement_to_check->images)
-
                         <div class="carousel-inner">
                             @foreach ($advertisement_to_check->images as $image)
                                 <div class="carousel-item @if($loop->first)active @endif">
