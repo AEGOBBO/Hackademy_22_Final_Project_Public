@@ -32,5 +32,12 @@ return [
     'priceAdvertisement' => 'Prezzo',
     'chooseCategory' => 'Scegli categoria',
     'addButtonAdvertisement' => 'Inserisci',
+    'prevPageButton' => 'Precedente',
+    'nextPageButton' => 'Seguente',
+    'dateAdvertisement' => 'Pubblicato ',
+    'acceptAdvertisement' => 'Accetta',
+    'rejectAdvertisement' => 'Rifiuta',
+    'noReviewAdvertisement' => 'Non ci sono annunci in attesa di revisione',
+    'reviewAdvertisement' => 'Annunci in attesa di revisione',
 
 ];

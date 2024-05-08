@@ -32,5 +32,11 @@ return [
     'priceAdvertisement' => 'Price',
     'chooseCategory' => 'Choose category',
     'addButtonAdvertisement' => 'Upload',
-
+    'prevPageButton' => 'Previous',
+    'nextPageButton' => 'Next',
+    'dateAdvertisement' => 'Published',
+    'acceptAdvertisement' => 'Accept',
+    'rejectAdvertisement' => 'Reject',
+    'noReviewAdvertisement' => 'No advertisement to review',
+    'reviewAdvertisement' => 'Advertisement pending review',
 ];
