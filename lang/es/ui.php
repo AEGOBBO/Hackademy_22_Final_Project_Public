@@ -24,5 +24,13 @@ return [
     'Category' => 'Categoria',
     'adPrice' => 'Precio',
     'publishAdvertisement' => 'Sube tu anuncio ',
+    'titleAdvertisement' => 'Titulo',
+    'imageAdvertisement' => 'Imagen',
+    'imgPreviewAdvertisement' => 'Vista previa',
+    'deletePreviewAdvertisement' => 'Borrar',
+    'descriptionAdvertisement' => 'Descripcion',
+    'priceAdvertisement' => 'Precio',
+    'chooseCategory' => 'Elige categoria',
+    'addButtonAdvertisement' => 'Sube',
 
 ];
