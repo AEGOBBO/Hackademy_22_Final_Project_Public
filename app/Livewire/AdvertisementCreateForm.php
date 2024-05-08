@@ -5,9 +5,11 @@ namespace App\Livewire;
 use App\Models\Image;
 use Livewire\Component;
 use App\Models\Category;
+use App\Jobs\ResizeImage;
 use App\Models\Advertisement;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 
 class AdvertisementCreateForm extends Component
 {
@@ -64,10 +66,14 @@ class AdvertisementCreateForm extends Component
         $this->advertisement=Category::find($this->category)->advertisements()->create($this->validate());
         if(count($this->images)){
             foreach($this->images as $image){
-                $this->advertisement->images()->create([
-                    'path'=>$image->store('images', 'public')
-                ]);
+                // $this->advertisement->images()->create(['path'=>$image->store('images', 'public')];
+                    $newFileName = "advertisements/{$this->advertisement->id}";
+                    $newImage = $this->advertisement->images()->create(['path'=>$image->store($newFileName, 'public')]);
+
+                    dispatch(new ResizeImage($newImage->path, 400, 300));
             }
+
+            File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
         
         $this->advertisement->update([
