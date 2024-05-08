@@ -8,10 +8,9 @@
             </div>
         </div>
         @if ($advertisement_to_check)
-        <div class="container mb-5">
+        <div class="container mb-5 min-vh-100">
             <div class="row">
                 <div class="col-12">
-
                     <div id="carouselExampleIndicators" class="carousel slide">
                         @if($advertisement_to_check->images)
 

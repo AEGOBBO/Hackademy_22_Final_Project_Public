@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container">
+    <div class="container min-vh-100">
         <div class="row">
             <h1 class="text-center">Vuoi lavorare con noi?</h1>
             <h2 class="text-center">Compila il seguente form</h2>

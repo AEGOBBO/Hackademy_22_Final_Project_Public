@@ -35,7 +35,9 @@
                     </div>
                 </div>
                 @endforeach
-                {{-- {{$advertisements->links()}} --}}
+                <div class="col-12 mt-5 mb-5">
+                    {{$advertisements->links()}}
+                </div>
             </div>
         </div>
     </header>
