@@ -39,4 +39,5 @@ return [
     'rejectAdvertisement' => 'Reject',
     'noReviewAdvertisement' => 'No advertisement to review',
     'reviewAdvertisement' => 'Advertisement pending review',
+    'latestAds' => 'The latest advertisements published by our users:',
 ];

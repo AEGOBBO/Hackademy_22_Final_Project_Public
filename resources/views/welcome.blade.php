@@ -1,6 +1,6 @@
 <x-layout>
     <header class="min-vh-100">
-        <div class="container ">
+        <div class="container header-text">
             <div class="row">
                 <div class="col-12 d-flex justify-content-center align-items-center d-flex flex-column">
                     <h1 class="text-center p-5">{{__('ui.welcomeOn')}} Presto.it <i class="fa-solid fa-person-swimming"></i></h1>
@@ -9,6 +9,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="py-5 text-center">
+            <h3>{{__('ui.latestAds')}}</h3>            {{-- I nostri annunci più recenti --}}
         </div>
         <div class="container">
             <div class="row">

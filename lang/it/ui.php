@@ -39,5 +39,6 @@ return [
     'rejectAdvertisement' => 'Rifiuta',
     'noReviewAdvertisement' => 'Non ci sono annunci in attesa di revisione',
     'reviewAdvertisement' => 'Annunci in attesa di revisione',
+    'latestAds' => 'Gli ultimi annunci pubblicati dai nostri utenti:',
 
 ];

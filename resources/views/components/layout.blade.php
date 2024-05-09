@@ -28,7 +28,7 @@
     </div>
     @endif
     <x-header/>
-    {{ $slot }}
+        {{ $slot }}
     <x-footer />
 </body>
 </html>
