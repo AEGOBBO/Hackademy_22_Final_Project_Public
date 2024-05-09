@@ -10,6 +10,18 @@
     font-weight: bolder;
 }
 
+.my-logo{
+    height: 55px;
+}
+
+.my-logo-nav{
+    height: 60px;
+}
+
+.my-logo-nav:hover{
+    transform: scale(1.1);
+}
+
 .nav-title{
     color: var(--ceruleo);
 }

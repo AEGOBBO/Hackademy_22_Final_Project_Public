@@ -1,12 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0 nav-custom">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0 nav-custom fs-5">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}"><span class="nav-logo">Presto.it</span></a>
+        {{-- <a class="navbar-brand" href="{{ route('home') }}"><span class="nav-logo">Presto.it</span></a> --}}
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link nav-title"
+                        href="{{ route('advertisement.index') }}">{{ __('ui.allAdvertisements') }}</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle nav-title" href="#!" id="categoriesDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.allCategories') }}</a>
@@ -19,12 +23,14 @@
                         @endforeach
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-title"
-                        href="{{ route('advertisement.index') }}">{{ __('ui.allAdvertisements') }}</a>
-                </li>
-                
             </ul>
+            <div class="text-center w-100">
+                <a class="navbar-brand" href="{{ route('home') }}">
+                    <span class="nav-logo">
+                        <img src="/media/flowtter logo.png" class="my-logo-nav">
+                    </span>
+                </a>
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
                     @auth

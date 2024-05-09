@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="min-vh-100">
-        <div class="container-fluid">
+    <div class="min-vh-100 pt-5">
+        <div class="container-fluid pt-5">
             <div class="row">
                 <di class="col-12 text-center mb-5">
                     <h1>{{$advertisement_to_check ? __('ui.reviewAdvertisement') : __('ui.noReviewAdvertisement')}}</h1>

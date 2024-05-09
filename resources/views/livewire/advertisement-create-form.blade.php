@@ -1,6 +1,6 @@
-<div class="container-fluid">
+<div class="container-fluid pt-5">
     <div class="row">
-        <div class="col-12 text-center">
+        <div class="col-12 text-center pt-5">
             <h2>{{__('ui.publishAdvertisement')}}</h2>
         </div>
         <div class="col-12 p-5 d-flex justify-content-center align-items-center">

@@ -1,5 +1,5 @@
-<div class="container vh-100">
-    <div class="header-img position-relative">
-        {{$slot}}
-    </div>
-</div>
+<header class="container-fluid header-img vh-100">
+    {{$slot}}
+    {{-- <div class="header-img position-relative">
+    </div> --}}
+</header>

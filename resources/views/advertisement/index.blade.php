@@ -1,7 +1,7 @@
 <x-layout>
-    <header class="min-vh-100">
+    <header class="min-vh-100 pt-5">
         @if (count($advertisements))
-        <div class="container-fluid">
+        <div class="container-fluid pt-5">
             <div class="row">
                 <div class="col-12">
                     <h1 class="text-center">{{__('ui.allAdvertisements')}}</h1>

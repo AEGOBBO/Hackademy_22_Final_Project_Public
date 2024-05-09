@@ -20,5 +20,39 @@
 }
 
 body{
-    padding-top: 10%;
+    padding-top: 3%;
+    background-image: url(../../public/media/bkg_splashes_white2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.my-container-wave{
+    height: 100px;
+}
+
+.my-wave{
+    position: absolute;
+    left: 0;
+    top: -300px;
+}
+
+.my-container-wave-upside{
+    height: 100px;
+}
+
+.my-wave-upside{
+    position: absolute;
+    left: 0;
+    top: 100px;
+}
+
+.my-surfers-cnt{
+    background-image: url(../../public/media/footer_bkg.jpg);
+    height: 800px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
