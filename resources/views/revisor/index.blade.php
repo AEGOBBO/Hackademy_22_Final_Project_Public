@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row">
                 <di class="col-12 text-center mb-5">
-                    <h1>{{$advertisement_to_check}} ? {{__('ui.reviewAdvertisement')}} : {{__('ui.noReviewAdvertisement')}}</h1>
+                    <h1>{{$advertisement_to_check ? __('ui.reviewAdvertisement') : __('ui.noReviewAdvertisement')}}</h1>
                 </di>
             </div>
         </div>

@@ -26,7 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropForeign('advertisement_id');
+        // Schema::dropForeign(['advertisement_id']);
         Schema::dropIfExists('images');
     }
 };
