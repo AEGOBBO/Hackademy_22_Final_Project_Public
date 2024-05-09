@@ -15,7 +15,8 @@
 }
 
 *{
-    font-family: "Roboto Flex", sans-serif;   
+    /* font-family: "Roboto Flex", sans-serif; */
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 body{
