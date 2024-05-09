@@ -1,5 +1,25 @@
 <x-layout>
-    <div class="container min-vh-100">
+    <header class=" pt-5">
+        @if ($category)
+        <div class="container-fluid pt-5">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center">{{__('ui.Category')}} {{$category->name}}</h1>
+                </div>
+            </div>
+        </div>
+        @else
+        <div class="container-fluid">
+            <div class="row">
+                <h3 class="text-center">{{__('ui.noAdvertisements')}}</h3>
+                <div class="text-center w-100">
+                    <a role="button" class="btn btn-custom" href="{{route('advertisement.create')}}">{{__('ui.publishAdvertisements')}}</a>
+                </div>
+            </div>
+        </div>
+        @endif
+    </header>
+    <div class="container min-vh-100 pt-5">
         <div class="row">
             @forelse ($category->advertisements as $advertisement)
                 <div class="col-12 col-md-3">

@@ -2,6 +2,7 @@
 return [
     'allAdvertisements' => 'Annunci',
     'allCategories' => 'Categorie',
+    'Category' => 'Categoria',
     'Abbigliamento' => 'Abbigliamento',
     'Tavole' => 'Tavole', 
     'Accessori' => 'Accessori', 

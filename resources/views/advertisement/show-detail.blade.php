@@ -1,7 +1,7 @@
 <x-layout>
-    <header class="container">
+    <header class="container pt-5">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 p-5">
                 <h1 class="text-center">Dettagli per l'annuncio {{$advertisement->title}}</h1>
             </div>
         </div>

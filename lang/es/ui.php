@@ -1,7 +1,8 @@
 <?php
 return [
     'allAdvertisements' => 'Anuncios',
-    'allCategories' => 'Categorias',
+    'allCategories' => 'Categorias',    
+    'Category' => 'Categoria',
     'Abbigliamento' => 'Ropa',
     'Tavole' => 'Tablas', 
     'Accessori' => 'Accesorios', 
