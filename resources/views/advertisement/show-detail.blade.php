@@ -42,18 +42,20 @@
                     </button>
                 </div>                
             </div>
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 pt-5">
                 {{-- dettaglio --}}
                 <div class="container">
-                    <div class="row justify-center">
+                    <div class="row">
                         <div class="col-12">
-                            <div class="card-body">
+                            <div class="d-flex flex-column justify-content-center">
                                 <h5 class="card-title">{{$advertisement->title}}</h5>
                                 <p class="card-text">{{$advertisement->price}}</p>
                                 <p class="card-text">{{$advertisement->description}}</p>
-                                <a href="{{route('categoryShow', $advertisement->category)}}" class="btn btn-success">Categoria: {{$advertisement->category->name}}</a>
-                                <p class="card-footer">Pubblicato {{$advertisement->created_at->diffForHumans()}} <br>
-                                    <span>da: {{$advertisement->user->name ?? ''}}</span>
+                                <div>
+                                    <a href="{{route('categoryShow', $advertisement->category)}}" class="btn btn-custom">Categoria: {{$advertisement->category->name}}</a>
+                                </div>
+                                <p class="mt-5">Pubblicato {{$advertisement->created_at->diffForHumans()}} <br>
+                                    <span>Da {{$advertisement->user->name ?? ''}}</span>
                                 </p>
                             </div>
                         </div>
