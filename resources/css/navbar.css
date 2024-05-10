@@ -35,5 +35,16 @@
 }
 
 .nav-title{
-    color: var(--cobaltlight);
+    color: var(--bluewater);
+    font-size: 15px;
 }
+
+.lang-custom-menu{
+    min-width: auto;
+    backdrop-filter: blur(15px);
+    background-color: rgba(245, 245, 245, 0.562);
+    border: none;
+    box-shadow: 1px 1px 8px 1px var(--ceruleolight);
+    
+}
+

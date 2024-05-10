@@ -95,19 +95,19 @@
                         </li>
                     @endguest
                     {{-- LINGUE --}}
-                    <div class="dropdown">
-                        <a role="button" class="nav-link nav-title dropdown-toggle" type="button"
+                    <div class="dropdown p-0">
+                        <a role="button" class="nav-link nav-title " type="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="/media/earth_icon.png" class="language-icon" alt="">
+                            <img src="/media/earth_icon.png" class="language-icon" alt="world">
                         </a>
-                        <ul class="dropdown-menu text-center">
-                            <li class="dropdown-item">
+                        <ul class="dropdown-menu lang-custom-menu p-0">
+                            <li class="dropdown-item  p-0">
                                 <x-_locale lang="it" nation='it' />
                             </li>
-                            <li class="dropdown-item">
+                            <li class="dropdown-item  p-0">
                                 <x-_locale lang="en" nation='gb' />
                             </li>
-                            <li class="dropdown-item">
+                            <li class="dropdown-item  p-0">
                                 <x-_locale lang="es" nation='es' />
                             </li>
                         </ul>
