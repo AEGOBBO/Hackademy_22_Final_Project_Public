@@ -57,5 +57,5 @@ return [
     'rejectAdvertisement' => 'Rechaza',
     'noReviewAdvertisement' => 'No hay anuncios para revisar',
     'reviewAdvertisement' => 'Anuncios para revisar',
-    'latestAds' => 'Los ultimos anuncios publicados por nuestros usuarios:',
+    'latestAds' => 'Los ultimos anuncios publicados por nuestros usuarios',
 ];

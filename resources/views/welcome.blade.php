@@ -16,7 +16,7 @@
         <img src="/media/white_wave.png" class="my-wave" srcset="">
     </div>
     <div class="py-5 text-center">
-        <h3>{{__('ui.latestAds')}}</h3>            {{-- I nostri annunci più recenti --}}
+        <h3 class="fs-1">{{__('ui.latestAds')}}</h3>            {{-- I nostri annunci più recenti --}}
     </div>
     <div class="container">
         <div class="row">
@@ -29,11 +29,11 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $advertisement->title }}</h5>
                             <p class="card-text">{{ $advertisement->price }}</p>
-                            <p class="card-text">{{ $advertisement->description }}</p>
+                            <p class="card-text">{{ Str::limit($advertisement->description, 80) }}</p>
 
-                            <div class="d-flex justify-content-end w-100">
+                            <div class="d-flex justify-content-end w-100 mt-3">
                                 <a href="{{ route('categoryShow', $advertisement->category) }}"
-                                    class="btn btn-custom">{{ __('ui.Category') }}
+                                    class="btn btn-custom"> {{ __('ui.Category') }}
                                     {{ __('ui.' . $advertisement->category->name) }}</a>
                             </div>
                         </div>

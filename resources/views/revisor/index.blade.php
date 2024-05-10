@@ -47,9 +47,9 @@
                             <span class="visually-hidden">{{__('ui.nextPageButton')}}</span>
                         </button>
                     </div>
-                    <h5 class="card-title">{{__('ui.titleAdvertisement')}} {{$advertisement_to_check->title}}</h5> 
-                    <p class="card-text">{{__('ui.descriptionAdvertisement')}} {{$advertisement_to_check->description}}</p> 
-                    <p class="card-title">{{__('ui.dateAdvertisement')}} {{$advertisement_to_check->created_at}}</p> 
+                    <h5 class="card-title pb-3 fw-bold">{{__('ui.titleAdvertisement')}}<br> {{$advertisement_to_check->title}}</h5> 
+                    <p class="card-text">{{__('ui.descriptionAdvertisement')}}<br> {{$advertisement_to_check->description}}</p> 
+                    <p class="card-title">{{__('ui.dateAdvertisement')}} il {{$advertisement_to_check->created_at}}</p> 
                 </div>
             </div>
             <div class="row">

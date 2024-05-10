@@ -30,9 +30,9 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $advertisement->title }}</h5>
                                     <p class="card-text">{{ $advertisement->price }}</p>
-                                    <p class="card-text">{{ $advertisement->description }}</p>
+                                    <p class="card-text">{{ Str::limit($advertisement->description, 80) }}</p>
 
-                                    <div class="d-flex justify-content-end w-100">
+                                    <div class="d-flex justify-content-end w-100 mt-3">
                                         <a href="{{ route('categoryShow', $advertisement->category) }}"
                                             class="btn btn-custom">{{ __('ui.Category') }}
                                             {{ __('ui.' . $advertisement->category->name) }}</a>

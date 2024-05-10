@@ -13,8 +13,8 @@ return [
     'Gadget' => 'Gadget', 
     'Videocamere' => 'Videocamere', 
     'Collezionismo' => 'Collezionismo',
-    'toBeRevised' => 'In attesa di revisione ',
-    'allUnreadMessages' => 'Messaggi non letti ',
+    'toBeRevised' => 'In attesa di revisione',
+    'allUnreadMessages' => 'Messaggi non letti',
     'workWithUs' => 'Lavora con noi',
     'workWithUsTitle' => 'Vuoi lavorare con noi?',
     'workWithUsSubTitle' => 'Compila il seguente form',
@@ -57,6 +57,6 @@ return [
     'rejectAdvertisement' => 'Rifiuta',
     'noReviewAdvertisement' => 'Non ci sono annunci in attesa di revisione',
     'reviewAdvertisement' => 'Annunci in attesa di revisione',
-    'latestAds' => 'Gli ultimi annunci pubblicati dai nostri utenti:',
+    'latestAds' => 'Gli ultimi annunci pubblicati dai nostri utenti',
 
 ];

@@ -19,7 +19,7 @@
         </div>
         @endif
     </header>
-    <div class="container min-vh-100 pt-5">
+    <div class="container min-vh-100 pt-5 mb-5 pb-5">
         <div class="row">
             @forelse ($category->advertisements as $advertisement)
                 <div class="col-12 col-md-4 mb-3">
@@ -32,7 +32,7 @@
                             @endif
                             <div class="card-body">
                                 <h5 class="card-title">{{ $advertisement->title }}</h5>
-                                <p class="card-text">{{__('ui.adPrice')}} {{ $advertisement->price }} &euro;</p>
+                                <p class="card-text">{{__('ui.adPrice')}} {{ $advertisement->price }}</p>
                                 <p class="card-text">{{ Str::limit($advertisement->description, 30) }}</p>
                             </div>
                             <div class="card-footer">

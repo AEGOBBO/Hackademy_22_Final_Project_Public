@@ -15,7 +15,13 @@
             
                     <!-- Password input -->
                     <div data-mdb-input-init class="form-outline mb-4">
-                        <input type="password" name="password" id="password" class="form-control" />
+                        <div class="d-flex align-items-center justify-content-center">
+                            <input type="password" name="password" id="password" class="form-control"/>
+                            {{-- <span class="px-3 showPsw">
+                                <i class="fa-regular fa-eye eye" id="eye"></i>
+                                <i class="fa-solid fa-eye-slash hide eyeSlash" id="eyeSlash"></i>
+                            </span> --}}
+                        </div>
                         <label class="form-label" for="password">{{__('ui.loginPassword')}}</label>
                     </div>
                     <!-- Remeber me checkbox -->

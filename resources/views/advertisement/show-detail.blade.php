@@ -48,11 +48,11 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex flex-column justify-content-center">
-                                <h5 class="card-title">{{$advertisement->title}}</h5>
-                                <p class="card-text">{{$advertisement->price}}</p>
-                                <p class="card-text">{{$advertisement->description}}</p>
+                                <h5 class="card-title fs-4 fw-bold">{{$advertisement->title}}</h5>
+                                <p class="card-text fs-5 fw-bold pt-2">{{__('ui.priceAdvertisement')}}: {{$advertisement->price}}</p>
+                                <p class="card-text fs-5">{{$advertisement->description}}</p>
                                 <div>
-                                    <a href="{{route('categoryShow', $advertisement->category)}}" class="btn btn-custom">Categoria: {{$advertisement->category->name}}</a>
+                                    <a href="{{route('categoryShow', $advertisement->category)}}" class="btn btn-custom">{{$advertisement->category->name}}</a>
                                 </div>
                                 <p class="mt-5">Pubblicato {{$advertisement->created_at->diffForHumans()}} <br>
                                     <span>Da {{$advertisement->user->name ?? ''}}</span>

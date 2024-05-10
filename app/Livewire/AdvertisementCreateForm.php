@@ -17,7 +17,7 @@ class AdvertisementCreateForm extends Component
     // #[Validate('required', message: 'Il campo titolo è richiesto')]
     // #[Validate('min:3', message: 'Il campo titolo deve essere minimo di 3 caratteri')]
     public $title;
-    // #[Validate('required|min:3|max:1000')]
+    // #[Validate('required|min:3|max:8000')]
     public $description;
     public $temporary_images;
     public $images=[];
@@ -30,7 +30,7 @@ class AdvertisementCreateForm extends Component
 
     protected $rules = [
         'title'=>'required|min:3',
-        'description'=>'required|min:3|max:1000',
+        'description'=>'required|min:3|max:8000',
         'price'=>'required|numeric|gt:0',
         'category'=>'required',
         'images.*'=>'image|max:1536',
