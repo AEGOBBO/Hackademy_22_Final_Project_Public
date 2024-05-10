@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kalam:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kalam:wght@300;400;700&family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dekko&display=swap');
+
 
 
 :root{
@@ -20,8 +22,10 @@
     --ceruleolight: #A9D6E5;
 }
 
+/* font-family: "Rock Salt", cursive; TITOLI PAGINE */
+
 *{
-    font-family: "Rock Salt", cursive;
+    font-family: "Dekko", cursive;
     color: var(--ceruleo);
 }
 
@@ -68,4 +72,12 @@ body{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.title-index-pages{
+    font-family: "Rock Salt", cursive;
+}
+
+.publish-adv-title{
+    color: var(--orangedark);   
 }

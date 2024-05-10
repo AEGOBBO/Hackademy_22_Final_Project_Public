@@ -4,7 +4,7 @@
         <div class="container-fluid pt-5">
             <div class="row">
                 <div class="col-12">
-                    <h1 class="text-center">{{__('ui.Category')}} {{$category->name}}</h1>
+                    <h1 class="text-center title-index-pages">{{__('ui.Category')}} {{$category->name}}</h1>
                 </div>
             </div>
         </div>
@@ -43,8 +43,8 @@
                 </div>
                 @empty
                 <div class="col-12 p-5 text-center">
-                    <h3 class="pb-5">{{__('ui.noAdvertisement')}} <i class="fa-regular fa-face-sad-cry"></i></h3>
-                    <h3>{{__('ui.publishAdvertisement')}} <a href="{{route('advertisement.create')}}" class=" text-decoration-none text-reset"> <i class="fa-solid fa-file-arrow-up"></i></a></h3>
+                    <h3 class="pb-5">{{__('ui.noAdvertisement')}} <img src="/media/sad-face_icon.png" alt="" class="sad-icon"></h3>
+                    <h3 class="publish-adv-title">{{__('ui.publishAdvertisement')}} <a href="{{route('advertisement.create')}}" class=" text-decoration-none text-reset"> <img src="/media/adv_icon.png" class="adv-icon" alt=""></a></h3>
                 </div>
             @endforelse
         </div>
