@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kalam:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Kalam:wght@300;400;700&family=Rock+Salt&display=swap');
+
 
 :root{
     --orange: #ffc857;
@@ -19,7 +21,7 @@
 }
 
 *{
-    font-family: "Kalam", cursive;
+    font-family: "Rock Salt", cursive;
     color: var(--ceruleo);
 }
 
