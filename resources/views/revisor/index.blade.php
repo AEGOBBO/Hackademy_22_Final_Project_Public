@@ -11,7 +11,7 @@
         <div class="container mb-5 min-vh-100">
             <div class="row">
                 <div class="col-12">
-                    <div id="carouselExampleIndicators" class="carousel slide">
+                    <div id="carouselExampleIndicators" class="carousel slide mb-5">
                         @if($advertisement_to_check->images)
                         <div class="carousel-inner">
                             @foreach ($advertisement_to_check->images as $image)
@@ -23,16 +23,15 @@
                         @else
                             <div class="carousel-inner">
                                 <div class="carousel-item">
-                                    <img src="https://picsum.photos/id/27/1200/400" class="d-block w-100" alt="...">
+                                    <img src="https://picsum.photos/500" class="d-block w-100" alt="...">
                                   </div>
                                 <div class="carousel-item">
-                                    <img src="https://picsum.photos/id/28/1200/400" class="d-block w-100" alt="...">
+                                    <img src="https://picsum.photos/501" class="d-block w-100" alt="...">
                                   </div>
                                 <div class="carousel-item">
-                                    <img src="https://picsum.photos/id/29/1200/400" class="d-block w-100" alt="...">
+                                    <img src="https://picsum.photos/502" class="d-block w-100" alt="...">
                                   </div>                              
                             </div>
-                            
                         @endif
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

@@ -15,7 +15,7 @@
 
 <body>
     <x-nav />
-    @if (session('message'))
+    {{-- @if (session('message'))
     <div class="container-fluid pt-5">
         <div class="row justify-content-center">
             <div class="col-4 pt-5">
@@ -26,7 +26,7 @@
             </div>
         </div>
     </div>
-    @endif
+    @endif --}}
         {{ $slot }}
         <x-footer />
     </body>
