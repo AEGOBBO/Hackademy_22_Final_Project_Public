@@ -1,12 +1,12 @@
 <x-layout>
-{{-- <x-header/> --}}
     <x-header class="min-vh-100">
         <div class="container header-text">
-            <div class="row">
+            <div class="row pt-5">
                 <div class="col-12 p-5 d-flex justify-content-center align-items-center d-flex flex-column">
-                    <h1 class="text-center p-5">{{__('ui.welcomeOn')}} flowtter <span><img src="/media/water.png" class="my-logo" alt="" srcset=""></span></h1>
+                    {{-- TITLE --}}
+                    <h1 class="text-center p-5 welcome-title">{{__('ui.welcomeOn')}} flowtter <span><img src="/media/water.png" class="my-logo" alt="" srcset=""></span></h1>
                     <div class="justify-content-center mb-5">
-                        <a role="button" class="btn btn-custom" href="{{route('advertisement.create')}}">{{__('ui.addAdvertisement')}}</a>
+                        <a role="button" class="btn btn-custom fs-3" href="{{route('advertisement.create')}}">{{__('ui.addAdvertisement')}}</a>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,8 @@
         <img src="/media/white_wave.png" class="my-wave" srcset="">
     </div>
     <div class="py-5 text-center">
-        <h3 class="fs-1">{{__('ui.latestAds')}}</h3>            {{-- I nostri annunci più recenti --}}
+        {{-- I nostri annunci più recenti --}}
+        <h3 class="fs-1">{{__('ui.latestAds')}}</h3>            
     </div>
     <div class="container">
         <div class="row">

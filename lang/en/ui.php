@@ -35,7 +35,7 @@ return [
     'registerPassword' => 'Password',
     'registerConfirmPassword' => 'Confirm password',
     'welcome' => 'Welcome',
-    'welcomeOn' => 'Welcome to',
+    'welcomeOn' => 'WELCOME TO ',
     'addAdvertisement' => 'Add advertisement',
     'noAdvertisement' => 'No advertisement uploaded yet',
     'adDetail' => 'Details',

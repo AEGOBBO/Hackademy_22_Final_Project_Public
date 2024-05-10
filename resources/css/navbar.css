@@ -22,6 +22,18 @@
     transform: scale(1.1);
 }
 
+.profile-icon{
+    height: 30px;
+}
+
+.language-icon{
+    height: 20px;
+}
+
+.adv-icon{
+    height: 30px;
+}
+
 .nav-title{
     color: var(--ceruleo);
 }

@@ -3,6 +3,7 @@
 
 :root{
     --orange: #ffc857;
+    --orangedark: #eda20a;
     --orangelight: #ffbf69;
     --yellow: #f3fc46;
     --yellowlight: #ffef9f;
@@ -18,9 +19,15 @@
 }
 
 *{
-    /* font-family: "Kalam", cursive; */
-    font-family: "Comic Neue", cursive;
+    font-family: "Kalam", cursive;
     color: var(--ceruleo);
+}
+
+.welcome-title{
+    font-family: "Kalam", cursive;
+    color: var(--orangedark);
+    font-size: 80px;
+    font-weight: 700;
 }
 
 body{
