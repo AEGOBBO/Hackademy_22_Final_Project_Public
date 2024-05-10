@@ -14,7 +14,7 @@
                     <h3 class="text-center">{{ __('ui.noAdvertisements') }}</h3>
                     <div class="text-center w-100">
                         <a role="button" class="btn btn-custom"
-                            href="{{ route('advertisement.create') }}">{{ __('ui.publishAdvertisements') }}</a>
+                            href="{{ route('advertisement.create') }}">{{ __('ui.addAdvertisement') }}</a>
                     </div>
                 </div>
             </div>
