@@ -21,17 +21,24 @@
     <div class="container">
         <div class="row">
             @forelse ($advertisements as $advertisement)
-            <div class="col-12 col-md-4 mb-3 pb-5">
-                <div class="card">
-                    <img src="{{!$advertisement->images()->get()->isEmpty() ? $advertisement->images()->first()->getUrl(400, 300) : 'https://picsum.photos/346'}} " alt="foto" class="card-img-top rounded">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$advertisement->title}}</h5>
-                        <p class="card-text">{{$advertisement->price}}</p>
-                        <p class="card-text">{{$advertisement->description}}</p>
-                        <a href="{{route('advertisement.show-detail', $advertisement)}}" class="btn btn-danger">{{__('ui.adDetail')}}</a>
-                        <a href="{{route('categoryShow', $advertisement->category)}}" class="btn btn-success">{{__('ui.Category')}} {{__("ui." . $advertisement->category->name)}} </a>
+            <div class="col-12 col-md-4 mb-3">
+                <a href="{{ route('advertisement.show-detail', $advertisement) }}" class="text-decoration-none">
+                    <div class="card">
+                        <img src="{{ !$advertisement->images()->get()->isEmpty() ? Storage::url($advertisement->images()->first()->path) : 'https://picsum.photos/346' }} "
+                            alt="foto" class="img-card-custom">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $advertisement->title }}</h5>
+                            <p class="card-text">{{ $advertisement->price }}</p>
+                            <p class="card-text">{{ $advertisement->description }}</p>
+
+                            <div class="d-flex justify-content-end w-100">
+                                <a href="{{ route('categoryShow', $advertisement->category) }}"
+                                    class="btn btn-custom">{{ __('ui.Category') }}
+                                    {{ __('ui.' . $advertisement->category->name) }}</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             @empty
             <div class="col-12 col-md-4 mb-3 w-100">

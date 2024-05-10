@@ -1,7 +1,7 @@
 <x-layout>
-    <div class="container min-vh-100">
+    <div class="container min-vh-100 pt-5">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 pt-5">
                 <h1 class="text-center">Registrati al portale</h1>
                 <h2 class="text-center mb-5 pb-5">Inserisci i tuoi dati nel form sottostante</h2>
                 <form method="POST" action="{{ route('register') }}">

@@ -15,10 +15,9 @@
                         @if($advertisement_to_check->images)
                         <div class="carousel-inner">
                             @foreach ($advertisement_to_check->images as $image)
-                                <div class="carousel-item @if($loop->first)active @endif">
-                                    <img src="{{Storage::url($image->path)}}" class="img-fluid rounded p-3" alt="immagine">
+                                <div class="carousel-item @if($loop->first)active @endif text-center">
+                                    <img src="{{Storage::url($image->path)}}" class="img-fluid" alt="immagine">
                                 </div>
-                                
                             @endforeach
                         </div>
                         @else
@@ -36,20 +35,19 @@
                             
                         @endif
                         <div class="carousel-indicators">
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">{{__('ui.prevPageButton')}}</span>
+                            <i class="fa-solid fa-chevron-left fs-1"></i>
+                            <span class="visually-hidden">{{__('ui.prevPageButton')}}</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">{{__('ui.nextPageButton')}}</span>
+                            <i class="fa-solid fa-chevron-right fs-1"></i>
+                            <span class="visually-hidden">{{__('ui.nextPageButton')}}</span>
                         </button>
-                      </div>
-
+                    </div>
                     <h5 class="card-title">{{__('ui.titleAdvertisement')}} {{$advertisement_to_check->title}}</h5> 
                     <p class="card-text">{{__('ui.descriptionAdvertisement')}} {{$advertisement_to_check->description}}</p> 
                     <p class="card-title">{{__('ui.dateAdvertisement')}} {{$advertisement_to_check->created_at}}</p> 

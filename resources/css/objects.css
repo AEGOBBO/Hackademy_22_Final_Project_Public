@@ -43,3 +43,7 @@
 .card:hover{
     transform: translateY(-7px);
 }
+
+.my-indicator{
+    color: black;
+}

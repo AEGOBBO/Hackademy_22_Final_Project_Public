@@ -22,19 +22,24 @@
     <div class="container min-vh-100 pt-5">
         <div class="row">
             @forelse ($category->advertisements as $advertisement)
-                <div class="col-12 col-md-3">
-                    <div class="card">
-                        <img src="https://picsum.photos/346" alt="foto" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $advertisement->title }}</h5>
-                            <p class="card-text">{{__('ui.adPrice')}} {{ $advertisement->price }} &euro;</p>
-                            <p class="card-text">{{ Str::limit($advertisement->description, 30) }}</p>
-                            <a href="{{route('advertisement.show-detail', $advertisement)}}" class="btn btn-danger">{{__('ui.adDetail')}}</a>                            
+                <div class="col-12 col-md-4 mb-3">
+                    <a href="{{route('advertisement.show-detail', $advertisement)}}" class="text-decoration-none">
+                        <div class="card">
+                            @if (!$advertisement->images()->get()->isEmpty())
+                                <img src="{{Storage::url($advertisement->images()->first()->path)}}" alt="{{$advertisement->title}}" class="img-card-custom">
+                            @else
+                                <img src="https://picsum.photos/346" alt="foto" class="img-card-custom">
+                            @endif
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $advertisement->title }}</h5>
+                                <p class="card-text">{{__('ui.adPrice')}} {{ $advertisement->price }} &euro;</p>
+                                <p class="card-text">{{ Str::limit($advertisement->description, 30) }}</p>
+                            </div>
+                            <div class="card-footer">
+                                <p>{{ $advertisement->category->name }}</p>
+                            </div>
                         </div>
-                        <div class="card-footer">
-                            <p>{{ $advertisement->category->name }}</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 @empty
                 <div class="col-12 p-5 text-center">

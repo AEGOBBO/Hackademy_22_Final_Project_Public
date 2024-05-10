@@ -10,32 +10,37 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 {{-- carosello --}}
-                <div id="carouselExampleIndicators" class="carousel slide">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <div id="carouselExample" class="carousel slide">
+                    @if (!$advertisement->images()->get()->isEmpty())
+                    <div class="carousel-inner">
+                        @foreach ($advertisement->images as $image)
+                            <div class="carousel-item @if($loop->first)active @endif text-center">
+                                <img src="{{Storage::url($image->path)}}" class="img-fluid" alt="immagine">
+                            </div>
+                        @endforeach
                     </div>
+                    @else
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img src="https://picsum.photos/400" class="d-block w-100 img-fluid" alt="{{$advertisement->title}}">
+                            <img src="https://picsum.photos/400" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://picsum.photos/401" class="d-block w-100 img-fluid" alt="{{$advertisement->title}}">
+                            <img src="https://picsum.photos/401" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
-                            <img src="https://picsum.photos/402" class="d-block w-100 img-fluid" alt="{{$advertisement->title}}">
+                            <img src="https://picsum.photos/402" class="d-block w-100" alt="...">
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
+                    @endif
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <i class="fa-solid fa-chevron-left fs-1"></i>
+                        <span class="visually-hidden">{{__('ui.prevPageButton')}}</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <i class="fa-solid fa-chevron-right fs-1"></i>
+                        <span class="visually-hidden">{{__('ui.nextPageButton')}}</span>
                     </button>
-                </div>
+                </div>                
             </div>
             <div class="col-12 col-md-6">
                 {{-- dettaglio --}}
