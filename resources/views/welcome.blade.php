@@ -25,8 +25,7 @@
             <div class="col-12 col-md-4 mb-3">
                 <a href="{{ route('advertisement.show-detail', $advertisement) }}" class="text-decoration-none">
                     <div class="card">
-                        <img src="{{ !$advertisement->images()->get()->isEmpty() ? Storage::url($advertisement->images()->first()->path) : 'https://picsum.photos/346' }} "
-                            alt="foto" class="img-card-custom">
+                        <img src="{{ !$advertisement->images()->get()->isEmpty() ? $advertisement->images()->first()->getUrl(400,300) : 'https://picsum.photos/346' }}" alt="foto" class="img-card-custom">
                         <div class="card-body">
                             <h5 class="card-title">{{ $advertisement->title }}</h5>
                             <p class="card-text">{{ $advertisement->price }}</p>
