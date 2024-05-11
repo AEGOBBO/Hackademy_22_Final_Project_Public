@@ -9,25 +9,25 @@
                 <li class="nav-item">
                     <a class="nav-link nav-title"
                         href="{{ route('advertisement.index') }}">{{ __('ui.allAdvertisements') }} </a>
-                        {{-- <img
-                            src="/media/adv_icon.png" class="adv-icon" alt=""> --}}
+
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle nav-title" href="#!" id="categoriesDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.allCategories') }}</a>
-                    <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                    <ul class="dropdown-menu cat-custom-menu" aria-labelledby="categoriesDropdown">
                         @foreach ($categories as $category)
                             <li>
                                 <a href="{{ route('categoryShow', compact('category')) }}"
-                                    class="dropdown-item">{{ __("ui.$category->name") }}</a>
+                                    class="dropdown-item cat-title">{{ __("ui.$category->name") }}</a>
                             </li>
                         @endforeach
                     </ul>
                 </li>
                 @auth
-                <li class="nav-item">
-                    <a role="button" class="nav-link nav-title" href="{{route('advertisement.create')}}">{{__('ui.addAdvertisement')}}</a>
-                </li>
+                    <li class="nav-item">
+                        <a role="button" class="nav-link nav-title"
+                            href="{{ route('advertisement.create') }}">{{ __('ui.addAdvertisement') }}</a>
+                    </li>
                 @endauth
             </ul>
             <div class="text-center w-50">
@@ -44,10 +44,10 @@
                             <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.welcome') }}
                                 {{ Auth::user()->name }} <img src="/media/surfboard_icon.png" class="profile-icon"></a>
-                            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                            <ul class="dropdown-menu profile-custom-menu" aria-labelledby="profileDropdown">
                                 @if (Auth::user()->is_revisor)
                                     <li class="nav-item">
-                                        <a role="button" class="nav-link position-relative"
+                                        <a role="button" class="nav-link profile-title position-relative"
                                             href="{{ route('revisor.index') }}">{{ __('ui.toBeRevised') }}
                                             <span
                                                 class="position-absolute top-0 start-75 translate-middle-relative">{{ App\Models\Advertisement::toBeRevisonedCount() }}
@@ -58,12 +58,12 @@
                                 @else
                                     <li class="nav-item">
                                         <a href="{{ route('revisor.become') }}"
-                                            class="nav-link">{{ __('ui.workWithUs') }}</a>
+                                            class="nav-link profile-title">{{ __('ui.workWithUs') }}</a>
                                     </li>
                                 @endif
                                 {{-- LOGOUT --}}
                                 <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="#"
+                                    <a class="nav-link profile-title" href="#"
                                         onclick="event.preventDefault(); document.querySelector('#logout').submit();">
                                         Logout
                                     </a>
@@ -78,16 +78,16 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.welcome') }}</a>
-                            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                            <ul class="dropdown-menu profile-custom-menu" aria-labelledby="profileDropdown">
                                 {{-- ACCEDI --}}
                                 <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="{{ route('login') }}">
+                                    <a class="nav-link profile-title" href="{{ route('login') }}">
                                         {{ __('ui.login') }}
                                     </a>
                                 </li>
                                 {{-- REGISTRATI --}}
                                 <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link" href="{{ route('register') }}">
+                                    <a class="nav-link profile-title " href="{{ route('register') }}">
                                         {{ __('ui.register') }}
                                     </a>
                                 </li>
@@ -96,8 +96,8 @@
                     @endguest
                     {{-- LINGUE --}}
                     <div class="dropdown p-0">
-                        <a role="button" class="nav-link nav-title " type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a role="button" class="nav-link nav-title " type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <img src="/media/earth_icon.png" class="language-icon" alt="world">
                         </a>
                         <ul class="dropdown-menu lang-custom-menu p-0">

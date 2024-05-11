@@ -35,8 +35,26 @@
 .nav-title{
     color: var(--bluewater);
     font-size: 20px;
-    font-family: "Dekko", cursive;
+}
 
+.nav-title:hover{
+    color: var(--cobalt);
+}
+
+
+.cat-custom-menu{
+    min-width: auto;
+    backdrop-filter: blur(15px);
+    background-color: rgba(245, 245, 245, 0.562);
+    border: none;
+    box-shadow: 1px 1px 8px 1px var(--ceruleolight);
+}
+
+.cat-title{
+    color: var(--bluewater);
+}
+.cat-title:hover{
+    color: var(--orangedark);
 }
 
 .lang-custom-menu{
@@ -45,6 +63,19 @@
     background-color: rgba(245, 245, 245, 0.562);
     border: none;
     box-shadow: 1px 1px 8px 1px var(--ceruleolight);
-    
 }
 
+.profile-custom-menu{
+    min-width: auto;
+    backdrop-filter: blur(15px);
+    background-color: rgba(245, 245, 245, 0.562);
+    border: none;
+    box-shadow: 1px 1px 8px 1px var(--ceruleolight);
+}
+
+.profile-title{
+    color: var(--bluewater);
+}
+.profile-title:hover{
+    color: var(--orangedark);
+}

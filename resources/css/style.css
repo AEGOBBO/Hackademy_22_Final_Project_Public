@@ -11,7 +11,7 @@
     --orangelight: #ffbf69;
     --yellow: #f3fc46;
     --yellowlight: #ffef9f;
-    --cream: #faf3dd;
+    --cream: #faf8f2;
     --bluedark: #012A4A;
     --blue: #013A63;
     --cobalt: #01497C;
@@ -25,8 +25,8 @@
 /* font-family: "Rock Salt", cursive; TITOLI PAGINE */
 
 *{
-    font-family: "Dekko", cursive;
-    color: var(--ceruleo);
+    font-family: "Kalam", cursive;
+    color: var(--orangedark);
 }
 
 .welcome-title{
@@ -44,6 +44,11 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     overflow-x: hidden;
+}
+
+.latestAdv-title{
+    font-family: "Kalam", cursive;
+
 }
 
 .my-container-wave{
@@ -66,13 +71,13 @@ body{
     top: 100px;
 }
 
-.my-surfers-cnt{
-    background-image: url(../../public/media/footer_bkg.jpg);
-    height: 800px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.my-wave-upside-top{
+    position: absolute;
+    left: 0;
+    top: -100px;
 }
+
+
 
 .title-index-pages{
     font-family: "Rock Salt", cursive;

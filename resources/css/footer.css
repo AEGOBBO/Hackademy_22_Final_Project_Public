@@ -13,6 +13,14 @@
     box-shadow: 1px 1px 8px 1px var(--ceruleolight);
 }
 
+.my-surfers-cnt{
+    background-image: url(../../public/media/footer_bkg.jpg);
+    height: 800px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .footer-title{
     color: var(--ceruleo);
 }
