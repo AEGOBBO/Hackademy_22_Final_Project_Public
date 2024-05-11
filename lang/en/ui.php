@@ -29,7 +29,7 @@ return [
     'loginRemember' => 'Remember me',    
     'register' => 'Register',
     'registerTitle' => 'Sign up at flowtter.it',
-    'registerSubTitle' => 'Please enter your details in the form below',
+    'registerSubTitle' => 'Please use the form below',
     'registerName' => 'Username',
     'registerEmail' => 'Email address',
     'registerPassword' => 'Password',

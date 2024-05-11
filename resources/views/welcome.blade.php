@@ -12,15 +12,14 @@
             </div>
         </div>
     </x-header>
+    {{-- WAVES --}}
     <div class="position-relative my-container-wave">
         <img src="/media/white_wave2.png" class="my-wave" srcset="">
         <img src="/media/white_wave2upside.png" class="my-wave-upside-top" srcset="">
     </div>
-    {{-- <div class="position-relative my-container-wave">
-    </div> --}}
     {{-- I nostri annunci più recenti --}}
     <div class="py-5 text-center">
-        <h3 class="fs-1 pt-5 latestAdv-title">{{__('ui.latestAds')}}</h3>            
+        <h3 class="fs-1 pt-5 latestAdv-title ">{{__('ui.latestAds')}}</h3>            
     </div>
     <div class="container">
         <div class="row">
@@ -55,5 +54,4 @@
     </div>
     <div class="my-surfers-cnt">
     </div>
-{{-- </div> --}}
 </x-layout>
