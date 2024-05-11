@@ -81,9 +81,16 @@ body{
 
 .title-index-pages{
     font-family: "Rock Salt", cursive;
+    text-shadow: 2px 2px 3px var(--yellow);
+
+}
+
+.no-adv-title{
+    color: var(--orangedark);   
+    text-shadow: 2px 2px 3px var(--blue);
 }
 
 .publish-adv-title{
     color: var(--orangedark);   
-    text-shadow: 2px 2px 5px var(--blue);
+    text-shadow: 2px 2px 3px var(--blue);
 }

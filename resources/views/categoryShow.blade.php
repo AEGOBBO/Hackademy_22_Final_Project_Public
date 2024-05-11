@@ -1,7 +1,7 @@
 <x-layout>
     <header class=" pt-5">
         @if ($category)
-        <div class="container-fluid pt-5">
+        <div class="container-fluid p-5">
             <div class="row">
                 <div class="col-12">
                     <h1 class="text-center title-index-pages">{{__('ui.Category')}} {{$category->name}}</h1>
@@ -35,7 +35,7 @@
                                 <p class="card-text">{{__('ui.adPrice')}} {{ $advertisement->price }}</p>
                                 <p class="card-text">{{ Str::limit($advertisement->description, 30) }}</p>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer footer-title-custom">
                                 <p>{{ $advertisement->category->name }}</p>
                             </div>
                         </div>
@@ -43,7 +43,7 @@
                 </div>
                 @empty
                 <div class="col-12 p-5 text-center">
-                    <h3 class="pb-5">{{__('ui.noAdvertisement')}} <img src="/media/sad-face_icon.png" alt="" class="sad-icon"></h3>
+                    <h3 class="no-adv-title pb-5">{{__('ui.noAdvertisement')}} <img src="/media/sad-face_icon.png" alt="" class="sad-icon"></h3>
                     <h3 class="publish-adv-title">{{__('ui.publishAdvertisement')}} <a href="{{route('advertisement.create')}}" class=" text-decoration-none text-reset"> <img src="/media/adv_icon.png" class="adv-icon" alt=""></a></h3>
                 </div>
             @endforelse
