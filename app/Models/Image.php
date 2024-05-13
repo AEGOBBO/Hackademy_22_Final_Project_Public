@@ -13,6 +13,7 @@ class Image extends Model
     use HasFactory;
 
     protected $fillable =['path'];
+    protected $casts=['labels'=>'array'];
 
     public function advertisement(): BelongsTo{
         return $this->belongsTo(Advertisement::class);
