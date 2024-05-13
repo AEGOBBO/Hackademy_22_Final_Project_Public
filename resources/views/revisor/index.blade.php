@@ -10,13 +10,33 @@
         @if ($advertisement_to_check)
         <div class="container mb-5 min-vh-100">
             <div class="row">
-                <div class="col-12">
+                <div class="col-md-3 border-end">
+                    <h5 class="tc-accent mt-3">Tags</h5>
+                    <div class="p-2">
+                        @if ($advertisement_to_check->images->first->get()->labels)
+                            @foreach ($advertisement_to_check->images->first->get()->labels as $label)
+                                <p class="d-inline">{{$label}}</p>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-body">
+                        <h5 class="tc-accent">Revisione Immagini</h5>
+                        <p>Adulti: <span class="{{$advertisement_to_check->images->first->get()->adult}}"></span></p>
+                        <p>Satira: <span class="{{$advertisement_to_check->images->first->get()->spoof}}"></span></p>
+                        <p>Medicina: <span class="{{$advertisement_to_check->images->first->get()->medical}}"></span></p>
+                        <p>Violenza: <span class="{{$advertisement_to_check->images->first->get()->violence}}"></span></p>
+                        <p>Conenuto Ammiccante: <span class="{{$advertisement_to_check->images->first->get()->racy}}"></span></p>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
                     <div id="carouselExampleIndicators" class="carousel slide mb-5">
                         @if($advertisement_to_check->images)
                         <div class="carousel-inner">
                             @foreach ($advertisement_to_check->images as $image)
                                 <div class="carousel-item @if($loop->first)active @endif text-center">
-                                    <img src="{{Storage::url($image->path)}}" class="img-fluid" alt="immagine">
+                                    <img src="{{$image->getUrl()}}" class="img-fluid" alt="immagine">
                                 </div>
                             @endforeach
                         </div>
