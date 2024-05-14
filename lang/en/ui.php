@@ -58,4 +58,10 @@ return [
     'noReviewAdvertisement' => 'No advertisement to review',
     'reviewAdvertisement' => 'Advertisement pending review',
     'latestAds' => 'The latest advertisements published by our users',
+    'imagesReview' => 'Images Review',
+    'adultContent'=> 'Adult',
+    'spoofContent'=> 'Spoof',
+    'medicalContent'=> 'Medical',
+    'violenceContent'=> 'Violence',
+    'racyContent'=> 'Racy',
 ];

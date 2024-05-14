@@ -3,7 +3,8 @@
         <div class="container-fluid pt-5">
             <div class="row">
                 <di class="col-12 text-center p-5 mb-3">
-                    <h1 class="title-index-pages">{{ $advertisement_to_check ? __('ui.reviewAdvertisement') : __('ui.noReviewAdvertisement') }}
+                    <h1 class="title-index-pages">
+                        {{ $advertisement_to_check ? __('ui.reviewAdvertisement') : __('ui.noReviewAdvertisement') }}
                     </h1>
                 </di>
             </div>
@@ -11,19 +12,21 @@
         @if ($advertisement_to_check)
             <div class="container mb-5 min-vh-100">
                 <div class="row">
-                    {{-- LABELS --}}
-                    <div class="col-md-3 border-end d-flex justify-content-center">
-                        <h4 class="tc-accent card-text-custom p-3">Tags</h4>
-                        <div class="p-2">
+                    {{-- LABELS/TAG --}}
+                    <div class="col-12 col-md-3 border-end d-flex flex-column">
+                        <div>
+                            <h4 class="tc-accent card-text-custom text-end pb-3 px-5">Tags</h4>
+                        </div>
+                        <div class="px-5">
                             @if ($advertisement_to_check->images->first->get()->labels)
                                 @foreach ($advertisement_to_check->images->first->get()->labels as $label)
-                                    <p class="d-inline">{{ $label }}</p>
+                                    <p class="text-end">{{ $label }}</p>
                                 @endforeach
                             @endif
                         </div>
                     </div>
                     {{-- CAROUSEL --}}
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-5">
                         <div id="carouselExampleIndicators" class="carousel slide mb-5">
                             @if ($advertisement_to_check->images)
                                 <div class="carousel-inner">
@@ -66,7 +69,7 @@
                                 <span class="visually-hidden">{{ __('ui.nextPageButton') }}</span>
                             </button>
                         </div>
-                        <h5 class="card-text-custom pb-3 fw-bold text-center">{{ __('ui.titleAdvertisement') }} 
+                        <h5 class="card-text-custom pb-3 fw-bold text-center">{{ __('ui.titleAdvertisement') }}
                             {{ $advertisement_to_check->title }}</h5>
                         <p class="card-text fs-5 text-center">{{ __('ui.descriptionAdvertisement') }}<br>
                             {{ $advertisement_to_check->description }}</p>
@@ -74,18 +77,20 @@
                             {{ $advertisement_to_check->created_at }}</p>
                     </div>
                     {{-- SAFE SEARCH --}}
-                    <div class="col-md-3">
+                    <div class="col-12 col-md-4">
                         <div class="card-body">
-                            <h4 class="tc-accent card-text-custom text-center p-3">Revisione Immagini</h4>
-                            <p>Adulti: <span class="{{ $advertisement_to_check->images->first->get()->adult }}"></span>
+                            <h4 class="tc-accent card-text-custom pb-3 mx-5">{{ __('ui.imagesReview') }}</h4>
+                            <p class="px-5">{{ __('ui.adultContent') }} : <span
+                                    class="{{ $advertisement_to_check->images->first->get()->adult }}"></span>
                             </p>
-                            <p>Satira: <span class="{{ $advertisement_to_check->images->first->get()->spoof }}"></span>
+                            <p class="px-5">{{ __('ui.spoofContent') }} : <span
+                                    class="{{ $advertisement_to_check->images->first->get()->spoof }}"></span>
                             </p>
-                            <p>Medicina: <span
+                            <p class="px-5">{{ __('ui.medicalContent') }} : <span
                                     class="{{ $advertisement_to_check->images->first->get()->medical }}"></span></p>
-                            <p>Violenza: <span
+                            <p class="px-5">{{ __('ui.violenceContent') }} : <span
                                     class="{{ $advertisement_to_check->images->first->get()->violence }}"></span></p>
-                            <p>Conenuto Ammiccante: <span
+                            <p class="px-5">{{ __('ui.racyContent') }} : <span
                                     class="{{ $advertisement_to_check->images->first->get()->racy }}"></span></p>
                         </div>
                     </div>

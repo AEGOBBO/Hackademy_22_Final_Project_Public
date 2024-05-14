@@ -81,7 +81,7 @@
                     @endif
 
                     <!-- Submit button -->
-                    <div class=" d-flex justify-content-end">
+                    <div class=" d-flex justify-content-end mt-3">
                         <button type="submit"
                             class="btn btn-custom btn-block mb-4">{{ __('ui.addButtonAdvertisement') }}</button>
                     </div>

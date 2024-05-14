@@ -58,4 +58,10 @@ return [
     'noReviewAdvertisement' => 'No hay anuncios para revisar',
     'reviewAdvertisement' => 'Anuncios para revisar',
     'latestAds' => 'Los ultimos anuncios publicados por nuestros usuarios',
+    'imagesReview' => 'Revision de imagenes',
+    'adultContent'=> 'Adultos',
+    'spoofContent'=> 'Satira',
+    'medicalContent'=> 'Medico',
+    'violenceContent'=> 'Violencia',
+    'racyContent'=> 'Picante',
 ];

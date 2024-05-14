@@ -58,5 +58,10 @@ return [
     'noReviewAdvertisement' => 'Non ci sono annunci in attesa di revisione',
     'reviewAdvertisement' => 'Annunci in attesa di revisione',
     'latestAds' => 'Gli ultimi annunci pubblicati dai nostri utenti',
-
+    'imagesReview' => 'Revisione immagini',
+    'adultContent'=> 'Adulti',
+    'spoofContent'=> 'Satira',
+    'medicalContent'=> 'Medico',
+    'violenceContent'=> 'Violenza',
+    'racyContent'=> 'Audace',
 ];
