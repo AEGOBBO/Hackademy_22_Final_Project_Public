@@ -1,11 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0 nav-custom fs-5">
-    <div class="container-fluid d-flex justify-content-between">
+    <div class="container-fluid ">
         <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ">
+            <ul class="navbar-nav w-50">
                 <li class="nav-item">
                     <a class="nav-link nav-title"
                         href="{{ route('advertisement.index') }}">{{ __('ui.allAdvertisements') }} </a>
@@ -30,59 +30,30 @@
                     </li>
                 @endauth
             </ul>
-            <form action="{{ route('advertisements.search') }}" method="GET" class="d-flex">
-                <input type="search" name="searched" class="form-control me-2" placeholder="Ricerca">
-                <button type="submit" class="btn btn-custom">Ricerca</button>
-            </form>
-            {{-- WS logo --}}
-            <a class="navbar-brand" href="{{ route('home') }}">
-                <span class="nav-logo">
-                    <img src="/media/flowtter logo.png" class="my-logo-nav">
-                </span>
-            </a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            {{-- LOGO --}}
+            <div class="w-25 d-flex justify-content-center align-items-center">
+                <a class="navbar-brand" href="{{ route('home') }}">
+                    <span class="nav-logo">
+                        <img src="/media/flowtter logo.png" class="my-logo-nav">
+                    </span>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse w-50" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
-                    @guest
+                    <form action="{{ route('advertisements.search') }}" method="GET" class="d-flex dropdown">
+                        <input type="search" name="searched" class="form-control me-2" placeholder="Ricerca">
+                        <button type="submit" class="btn btn-custom">Ricerca</button>
+                    </form>
+                    @auth
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.welcome') }}</a>
-                            <ul class="dropdown-menu profile-custom-menu" aria-labelledby="profileDropdown">
-                                {{-- ACCEDI --}}
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link profile-title" href="{{ route('login') }}">
-                                        {{ __('ui.login') }}
-                                    </a>
-                                </li>
-                                {{-- REGISTRATI --}}
-                                <li class="nav-item me-3 me-lg-0">
-                                    <a class="nav-link profile-title " href="{{ route('register') }}">
-                                        {{ __('ui.register') }}
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    @endguest
-                    @auth
-                        @if (Auth::user()->is_revisor)
-                            <li class="nav-item">
-                                <a role="button" class="nav-link profile-title position-relative"
-                                    href="{{ route('revisor.index') }}">{{ __('ui.toBeRevised') }}
-                                    <span
-                                        class="position-absolute top-0 start-75 translate-middle-relative">{{ App\Models\Advertisement::toBeRevisonedCount() }}
-                                        <span class="visually-hidden">{{ __('ui.allUnreadMessages') }}</span>
-                                    </span>
-                                </a>
-                            </li>
-                        @else
-                            <li class="nav-item">
-                                <a href="{{ route('revisor.become') }}"
-                                    class="nav-link profile-title">{{ __('ui.workWithUs') }}</a>
-                            </li>
-                        @endif
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle nav-title" href="#" id="profileDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.welcome') }}
-                                {{ Auth::user()->name }} <img src="/media/surfboard_icon.png" class="profile-icon"></a>
+                                {{ Auth::user()->name }}
+                                <img src="/media/surfboard_icon.png" class="profile-icon">
+                                <span class="position-absolute top-0 start-75 translate-middle-relative">{{ App\Models\Advertisement::toBeRevisonedCount() }}
+                                    <span class="visually-hidden">{{ __('ui.allUnreadMessages') }}</span>
+                                </span>                                
+                            </a>
                             <ul class="dropdown-menu profile-custom-menu" aria-labelledby="profileDropdown">
                                 @if (Auth::user()->is_revisor)
                                     <li class="nav-item">
@@ -113,6 +84,26 @@
                             </ul>
                         </li>
                     @endauth
+                    @guest
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.welcome') }}</a>
+                            <ul class="dropdown-menu profile-custom-menu" aria-labelledby="profileDropdown">
+                                {{-- ACCEDI --}}
+                                <li class="nav-item me-3 me-lg-0">
+                                    <a class="nav-link profile-title" href="{{ route('login') }}">
+                                        {{ __('ui.login') }}
+                                    </a>
+                                </li>
+                                {{-- REGISTRATI --}}
+                                <li class="nav-item me-3 me-lg-0">
+                                    <a class="nav-link profile-title " href="{{ route('register') }}">
+                                        {{ __('ui.register') }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    @endguest
                     {{-- LINGUE --}}
                     <div class="dropdown p-0">
                         <a role="button" class="nav-link nav-title " type="button" data-bs-toggle="dropdown"
@@ -131,7 +122,6 @@
                             </li>
                         </ul>
                     </div>
-
                 </ul>
             </div>
         </div>
