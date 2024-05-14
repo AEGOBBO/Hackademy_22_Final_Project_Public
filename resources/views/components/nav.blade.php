@@ -30,6 +30,10 @@
                     </li>
                 @endauth
             </ul>
+            <form action="{{ route('advertisements.search') }}" method="GET" class="d-flex">
+                <input type="search" name="searched" class="form-control me-2" placeholder="Ricerca">
+                <button type="submit" class="btn btn-custom">Ricerca</button>
+            </form>
             <div class="text-center w-50">
                 <a class="navbar-brand" href="{{ route('home') }}">
                     <span class="nav-logo">

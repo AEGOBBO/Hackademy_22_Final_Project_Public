@@ -21,7 +21,7 @@
         @endif
         <div class="container">
             <div class="row">
-                @foreach ($advertisements as $advertisement)
+                @forelse ($advertisements as $advertisement)
                     <div class="col-12 col-md-4 mb-3">
                         <a href="{{ route('advertisement.show-detail', $advertisement) }}" class="text-decoration-none">
                             <div class="card">
@@ -41,7 +41,13 @@
                             </div>
                         </a>
                     </div>
-                @endforeach
+                @empty
+                <div class="col-12">
+                    <div class="alert alert-warning py-3 shadow">
+                        <p class="lead">Non ci sono risultati per questa ricerca </p>
+                    </div>
+                </div>
+                @endforelse
                 <div class="col-12 mt-5 mb-5">
                     {{ $advertisements->links() }}
                 </div>

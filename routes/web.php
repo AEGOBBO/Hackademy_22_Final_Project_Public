@@ -36,3 +36,6 @@ Route::post('/revisor/request', [RevisorController::class, 'requestRevisor'])->n
 
 // Imposta Lingua
 Route::post('/lingua/{lang}',[PublicController::class,'setLanguage'])->name('setLocale');
+
+//Ricerca annuncio
+Route::get('/search/advertisement', [PublicController::class, 'searchAdvertisements'])->name('advertisements.search');

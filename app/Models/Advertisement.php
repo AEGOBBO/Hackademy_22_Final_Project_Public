@@ -8,12 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Laravel\Scout\Searchable;
 
 class Advertisement extends Model
 {
-    use HasFactory;
+    use HasFactory, Searchable;
 
     protected $fillable = ['title', 'description', 'price', 'user_id','is_accepted'];
+
+    public function toSearchableArray(){
+        $category = $this->category;
+        $array = [
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'category' => $category,
+        ];
+        return $array;
+    }
+
 
     public function category(): BelongsTo
     {
@@ -36,4 +49,5 @@ class Advertisement extends Model
     {
         return $this->hasMany(Image::class);
     }
+
 }
