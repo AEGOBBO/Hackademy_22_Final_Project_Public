@@ -25,10 +25,19 @@
 /* CARD ADV */
 
 .img-card-custom{
-    height: 300px;
+    /* height: 300px; */
     border-top-left-radius: 11px;
     border-top-right-radius: 11px;
     width: 100%;
+
+}
+
+.img-revisor{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+    
 }
 
 .card{

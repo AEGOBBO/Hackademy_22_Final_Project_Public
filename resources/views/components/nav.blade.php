@@ -54,10 +54,12 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.welcome') }}
                                 {{ Auth::user()->name }}
                                 <img src="/media/surfboard_icon.png" class="profile-icon">
-                                <span
-                                    class="position-absolute top-0 start-75 translate-middle-relative">{{ App\Models\Advertisement::toBeRevisonedCount() }}
-                                    <span class="visually-hidden">{{ __('ui.allUnreadMessages') }}</span>
-                                </span>
+                                @if (App\Models\Advertisement::toBeRevisonedCount())
+                                    <span
+                                        class="position-absolute top-0 start-75 translate-middle-relative">{{ App\Models\Advertisement::toBeRevisonedCount() }}
+                                        <span class="visually-hidden">{{ __('ui.allUnreadMessages') }}</span>
+                                    </span>
+                                @endif
                             </a>
                             <ul class=" dropdown-menu  profile-custom-menu" aria-labelledby="profileDropdown">
                                 @if (Auth::user()->is_revisor)
