@@ -44,8 +44,8 @@
                 <ul class="navbar-nav ms-auto">
                     {{-- SEARCH BAR --}}
                     <form action="{{ route('advertisements.search') }}" method="GET" class="d-flex dropdown">
-                        <input type="search" name="searched" class="form-control me-2 rounded-5" placeholder="{{ __('ui.search') }}">
-                        <button type="submit" class="btn btn-custom me-2">{{ __('ui.search') }}</button>
+                        <input type="search" name="searched" class="form-control input-search-custom me-2 rounded-5" placeholder="{{ __('ui.search') }}">
+                        <button type="submit" class="btn loupe-btn me-2"><img src="/media/loupe.png" class="loupe-icon" alt=""></button>
                     </form>
                     {{-- USER MENU --}}
                     @auth
@@ -59,7 +59,7 @@
                                     <span class="visually-hidden">{{ __('ui.allUnreadMessages') }}</span>
                                 </span>
                             </a>
-                            <ul class="dropdown-menu profile-custom-menu" aria-labelledby="profileDropdown">
+                            <ul class=" dropdown-menu  profile-custom-menu" aria-labelledby="profileDropdown">
                                 @if (Auth::user()->is_revisor)
                                     <li class="nav-item">
                                         <a role="button" class="nav-link profile-title position-relative"

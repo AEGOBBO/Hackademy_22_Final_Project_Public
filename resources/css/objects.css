@@ -13,7 +13,6 @@
 }
 
 .btn-custom:hover{
-    color: var(--cobalt);
     background-color: var(--yellow);
 }
 
