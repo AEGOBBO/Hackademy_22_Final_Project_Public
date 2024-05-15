@@ -6,11 +6,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav w-50">
+                {{-- ADVERTISEMENT --}}
                 <li class="nav-item">
                     <a class="nav-link nav-title"
                         href="{{ route('advertisement.index') }}">{{ __('ui.allAdvertisements') }} </a>
-
                 </li>
+                {{-- CATEGORY --}}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle nav-title" href="#!" id="categoriesDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.allCategories') }}</a>
@@ -23,6 +24,7 @@
                         @endforeach
                     </ul>
                 </li>
+                {{-- ADD ADVERTISEMENT --}}
                 @auth
                     <li class="nav-item">
                         <a role="button" class="nav-link nav-title"
@@ -40,19 +42,22 @@
             </div>
             <div class="collapse navbar-collapse w-50" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto">
+                    {{-- SEARCH BAR --}}
                     <form action="{{ route('advertisements.search') }}" method="GET" class="d-flex dropdown">
-                        <input type="search" name="searched" class="form-control me-2" placeholder="Ricerca">
-                        <button type="submit" class="btn btn-custom">Ricerca</button>
+                        <input type="search" name="searched" class="form-control me-2 rounded-5" placeholder="{{ __('ui.search') }}">
+                        <button type="submit" class="btn btn-custom me-2">{{ __('ui.search') }}</button>
                     </form>
+                    {{-- USER MENU --}}
                     @auth
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.welcome') }}
                                 {{ Auth::user()->name }}
                                 <img src="/media/surfboard_icon.png" class="profile-icon">
-                                <span class="position-absolute top-0 start-75 translate-middle-relative">{{ App\Models\Advertisement::toBeRevisonedCount() }}
+                                <span
+                                    class="position-absolute top-0 start-75 translate-middle-relative">{{ App\Models\Advertisement::toBeRevisonedCount() }}
                                     <span class="visually-hidden">{{ __('ui.allUnreadMessages') }}</span>
-                                </span>                                
+                                </span>
                             </a>
                             <ul class="dropdown-menu profile-custom-menu" aria-labelledby="profileDropdown">
                                 @if (Auth::user()->is_revisor)
@@ -84,6 +89,7 @@
                             </ul>
                         </li>
                     @endauth
+                    {{-- LOGIN/REGISTER MENU --}}
                     @guest
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle nav-title" href="#!" id="profileDropdown" role="button"

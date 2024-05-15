@@ -64,4 +64,5 @@ return [
     'medicalContent'=> 'Medical',
     'violenceContent'=> 'Violence',
     'racyContent'=> 'Racy',
+    'search' => 'Search',
 ];
