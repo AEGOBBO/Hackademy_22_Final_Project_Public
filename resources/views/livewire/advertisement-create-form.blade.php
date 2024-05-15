@@ -67,8 +67,7 @@
                                     @foreach ($images as $key => $image)
                                         <div class="col my-3 ">
                                             <div class="img-preview mx-auto shadow rounded"
-                                                style="height: 20vh; width: 15vh; background-image: url({{ $image->temporaryUrl() }});">
-
+                                                style="height: 20vh; width: 15vh; background-image: url({{ $image->temporaryUrl() }});"> 
                                             </div>
                                             <button class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
                                                 wire:click="removeImage({{ $key }})">{{ __('ui.deletePreviewAdvertisement') }}</button>

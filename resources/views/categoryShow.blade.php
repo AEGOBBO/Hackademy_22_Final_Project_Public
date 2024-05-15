@@ -26,9 +26,9 @@
                     <a href="{{route('advertisement.show-detail', $advertisement)}}" class="text-decoration-none">
                         <div class="card">
                             @if (!$advertisement->images()->get()->isEmpty())
-                                <img src="{{Storage::url($advertisement->images()->first()->path)}}" alt="{{$advertisement->title}}" class="img-card-custom">
+                                <img src="{{Storage::url($advertisement->images()->first()->getUrl(400,300))}}" alt="{{$advertisement->title}}" class="img-card-custom">
                             @else
-                                <img src="https://picsum.photos/346" alt="foto" class="img-card-custom">
+                                <img src="https://picsum.photos/400/300" alt="foto" class="img-card-custom">
                             @endif
                             <div class="card-body">
                                 <h5 class="card-title">{{ $advertisement->title }}</h5>

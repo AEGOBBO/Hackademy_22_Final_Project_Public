@@ -33,7 +33,7 @@
                                     @foreach ($advertisement_to_check->images as $image)
                                         <div
                                             class="carousel-item @if ($loop->first) active @endif text-center">
-                                            <img src="{{ $image->getUrl() }}" class="img-fluid" alt="immagine">
+                                            <img src="{{ $image->getUrl(400, 300) }}" class="img-fluid" alt="immagine">
                                         </div>
                                     @endforeach
                                 </div>
