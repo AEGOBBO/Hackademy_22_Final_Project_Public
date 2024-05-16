@@ -4,7 +4,7 @@
             <div class="row pt-5">
                 <div class="col-12 p-5 d-flex justify-content-center align-items-center d-flex flex-column">
                     {{-- TITLE --}}
-                    <h1 class="text-center p-5 welcome-title">{{__('ui.welcomeOn')}} flowtter <span><img src="/media/water.png" class="my-logo" alt="" srcset=""></span></h1>
+                    <h1 class="text-center p-5 display-1 fw-bolder">{{__('ui.welcomeOn')}} flowtter <span><img src="/media/water.png" class="my-logo" alt="" srcset=""></span></h1>
                     <div class="justify-content-center mb-5">
                         <a role="button" class="btn btn-custom fs-3" href="{{route('advertisement.create')}}">{{__('ui.addAdvertisement')}}</a>
                     </div>

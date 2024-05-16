@@ -31,13 +31,6 @@
     color: var(--orangedark);
 }
 
-.welcome-title{
-    font-family: "Kalam", cursive;
-    color: var(--orangedark);
-    font-size: 80px;
-    font-weight: 700;
-}
-
 body{
     padding-top: 3%;
     background-image: url(../../public/media/bkg_splashes_white2.jpg);
@@ -54,7 +47,8 @@ body{
 }
 
 .my-container-wave{
-    height: 100px;
+    /* height: 100px; */
+    height: 15vh;
 }
 
 .my-wave{

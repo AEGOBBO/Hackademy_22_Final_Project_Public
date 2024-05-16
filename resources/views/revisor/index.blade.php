@@ -2,15 +2,15 @@
     <div class="min-vh-100 pt-5">
         <div class="container-fluid pt-5">
             <div class="row">
-                <di class="col-12 text-center p-5 mb-3">
+                <div class="col-12 text-center p-5 mb-3">
                     <h1 class="title-index-pages">
                         {{ $advertisement_to_check ? __('ui.reviewAdvertisement') : __('ui.noReviewAdvertisement') }}
                     </h1>
-                </di>
+                </div>
             </div>
         </div>
         @if ($advertisement_to_check)
-            <div class="container mb-5 min-vh-100">
+            <div class="container mb-5">
                 <div class="row">
                     {{-- LABELS/TAG --}}
                     <div class="col-12 col-md-3 border-end d-flex flex-column">
@@ -26,7 +26,7 @@
                         </div>
                     </div>
                     {{-- CAROUSEL --}}
-                    <div class="col-12 col-md-5">
+                    <div class="col-12 col-md-6 border-end">
                         <div id="carouselExampleIndicators" class="carousel slide mb-5">
                             @if ($advertisement_to_check->images)
                                 <div class="carousel-inner">
@@ -77,7 +77,7 @@
                             {{ $advertisement_to_check->created_at }}</p>
                     </div>
                     {{-- SAFE SEARCH --}}
-                    <div class="col-12 col-md-4">
+                    <div class="col-12 col-md-3">
                         <div class="card-body">
                             <h4 class="tc-accent card-text-custom pb-3 mx-5">{{ __('ui.imagesReview') }}</h4>
                             <p class="px-5">{{ __('ui.adultContent') }} : <span
@@ -95,8 +95,9 @@
                         </div>
                     </div>
                 </div>
-                {{-- BUTTONS --}}
-                <div class="container">
+            </div>
+            {{-- BUTTONS --}}
+            <div class="container-fluid">
                     <div class="row">
                         <div class="col-12 col-md-6 d-flex justify-content-end p-5">
                             <form action="{{ route('revisor.accept', ['advertisement' => $advertisement_to_check]) }}"
@@ -104,7 +105,7 @@
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit"
-                                    class="btn btn-outline-success fs-4 mb-2">{{ __('ui.acceptAdvertisement') }}</button>
+                                    class="btn btn-accept fs-4 mb-2">{{ __('ui.acceptAdvertisement') }}</button>
                             </form>
                         </div>
                         <div class="col-12 col-md-6 d-flex justify-content-start p-5">
@@ -113,7 +114,7 @@
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit"
-                                    class="btn btn-outline-danger fs-4">{{ __('ui.rejectAdvertisement') }}</button>
+                                    class="btn btn-reject fs-4">{{ __('ui.rejectAdvertisement') }}</button>
                             </form>
                         </div>
                     </div>
