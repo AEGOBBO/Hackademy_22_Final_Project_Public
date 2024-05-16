@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Advertisement;
 use Illuminate\Http\Request;
+use App\Models\Advertisement;
+use Illuminate\Support\Facades\Auth;
 
 class AdvertisementController extends Controller
 {
@@ -50,7 +51,10 @@ class AdvertisementController extends Controller
      */
     public function edit(Advertisement $advertisement)
     {
-        //
+        if (Auth::user()->id == $advertisement->user->id) {
+            return view('advertisement.edit', compact('advertisement'));
+        }
+        return redirect()->back()->with('message', 'Non puoi modificare l\'annuncio');
     }
 
     /**

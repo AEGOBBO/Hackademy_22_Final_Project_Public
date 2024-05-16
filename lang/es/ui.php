@@ -66,4 +66,6 @@ return [
     'racyContent'=> 'Picante',
     'search' => 'Busqueda',
     'noAdvertisementSearch' => 'No hay anuncios para esa busqueda',
+    'editButtonAdvertisement'=> 'Editar',
+    'insertImages' => 'Selecciona las imagenes aqui',
 ];

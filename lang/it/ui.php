@@ -66,4 +66,6 @@ return [
     'racyContent'=> 'Audace',
     'search' => 'Ricerca',
     'noAdvertisementSearch' => 'Non ci sono annunci per questa ricerca',
+    'editButtonAdvertisement'=> 'Modifica',
+    'insertImages' => 'Inserisci le immagini qui',
 ];
