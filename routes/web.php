@@ -23,6 +23,8 @@ Route::get('/categoria/{category}', [PublicController::class, 'categoryShow'])->
 Route::get('/advertisement/create', [AdvertisementController::class, 'create'])->name('advertisement.create');
 Route::get('/advertisement/index', [AdvertisementController::class, 'index'])->name('advertisement.index');
 Route::get('/advertisement/show/{advertisement}', [AdvertisementController::class, 'show'])->name('advertisement.show-detail');
+Route::get('/advertisement/edit/{advertisement}', [AdvertisementController::class, 'edit'])->name('advertisement.edit');
+
 
 // rotte revisore
 Route::get('/revisor/index',[RevisorController::class,'index'])->name('revisor.index');

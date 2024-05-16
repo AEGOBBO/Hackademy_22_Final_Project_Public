@@ -66,4 +66,6 @@ return [
     'racyContent'=> 'Racy',
     'search' => 'Search',
     'noAdvertisementSearch' => 'No advertisement for this search',
+    'editButtonAdvertisement'=> 'Edit',
+    'insertImages' => 'Insert images here',
 ];

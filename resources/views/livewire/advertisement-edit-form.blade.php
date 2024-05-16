@@ -4,7 +4,7 @@
             <h2 class="title-index-pages p-5">{{ __('ui.publishAdvertisement') }}</h2>
         </div>
         <div class="col-12 col-md-5 p-3">
-            <form wire:submit="store" enctype="multipart/form-data" class="form-custom shadow p-5">
+            <form wire:submit="update" enctype="multipart/form-data" class="form-custom shadow p-5">
                 @if (session('message'))
                     <div class="alert alert-success text-center">
                         {{ session('message') }}
@@ -56,7 +56,7 @@
                         for="temporary_images">{{ __('ui.imageAdvertisement') }}</label>
                     <input type="file" id="temporary_images" multiple
                         class="form-control @error('temporary_images.*') is-invalid @enderror"
-                        wire:model="temporary_images" placeholder="Inserisci le immagini qui" />
+                        wire:model="temporary_images" placeholder="{{ __('ui.insertImages') }}" />
                     @error('temporary_images')
                         {{ $message }}
                     @enderror
@@ -72,22 +72,21 @@
                                             style="height: 20vh; width: 15vh; background-image: url({{ $image->temporaryUrl() }}); background-position:center; background-size: cover;">
                                         </div>
                                         <button class="btn btn-danger shadow d-block text-center mt-2 mx-auto"
-                                        wire:click.prevent="removeImage({{ $key }})">{{ __('ui.deletePreviewAdvertisement') }}</button>
+                                            wire:click="removeImage({{ $key }})">{{ __('ui.deletePreviewAdvertisement') }}</button>
                                     </div>
-                                    @endforeach
+                                @endforeach
 
                             </div>
                         </div>
                     </div>
                 @endif
 
-                <!-- Submit button -->
+                <!-- Edit button -->
                 <div class=" d-flex justify-content-end mt-3">
                     <button type="submit"
-                        class="btn btn-custom fs-5 btn-block mt-4">{{ __('ui.addButtonAdvertisement') }}</button>
+                        class="btn btn-custom fs-5 btn-block mt-4">{{ __('ui.editButtonAdvertisement') }}</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
