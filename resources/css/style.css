@@ -72,6 +72,20 @@ body{
     left: 0;
     top: -100px;
 }
+@media screen and (max-width:390px) {
+    .my-container-wave{
+        scale: 1;
+    }
+    .my-wave{
+        width: 100%;
+        top: -165px;
+    }
+    /* .my-wave-upside-top{
+        width: 100%;
+        top: -200px;
+    } */
+}
+
 
 .title-index-pages{
     font-family: "Rock Salt", cursive;
