@@ -20,7 +20,7 @@
         @endif
     </header>
     <div class="container min-vh-100 pt-5 mb-5 pb-5">
-        <div class="row">
+        <div class="row justify-content-center">
             @forelse ($category->advertisements as $advertisement)
                 <div class="col-12 col-md-4 mb-3">
                     <a href="{{route('advertisement.show-detail', $advertisement)}}" class="text-decoration-none">
@@ -42,7 +42,7 @@
                     </a>
                 </div>
                 @empty
-                <div class="col-12 p-5 text-center">
+                <div class="col-12 col-md-6 alert-custom p-5 text-center">
                     <h3 class="no-adv-title pb-5">{{__('ui.noAdvertisement')}} <img src="/media/sad-face_icon.png" alt="" class="sad-icon"></h3>
                     <h3 class="publish-adv-title">{{__('ui.publishAdvertisement')}} <a href="{{route('advertisement.create')}}" class=" text-decoration-none text-reset"> <img src="/media/adv_icon.png" class="adv-icon" alt=""></a></h3>
                 </div>

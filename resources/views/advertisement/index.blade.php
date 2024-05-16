@@ -11,21 +11,18 @@
         @else
             <div class="container-fluid">
                 <div class="row">
-                    <h3 class="text-center">{{ __('ui.noAdvertisements') }}</h3>
-                    <div class="text-center w-100">
-                        <a role="button" class="btn btn-custom"
-                            href="{{ route('advertisement.create') }}">{{ __('ui.addAdvertisement') }}</a>
-                    </div>
+                    <h3 class="title-index-pages text-center fs-1 p-5">{{ __('ui.noAdvertisements') }}</h3>
+
                 </div>
             </div>
         @endif
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center p-3">
                 @forelse ($advertisements as $advertisement)
                     <div class="col-12 col-md-4 mb-3">
                         <a href="{{ route('advertisement.show-detail', $advertisement) }}" class="text-decoration-none">
                             <div class="card">
-                                <img src="{{ !$advertisement->images()->get()->isEmpty() ? $advertisement->images()->first()->getUrl(400,300) : 'https://picsum.photos/346' }} "
+                                <img src="{{ !$advertisement->images()->get()->isEmpty() ? $advertisement->images()->first()->getUrl(400, 300) : 'https://picsum.photos/346' }} "
                                     alt="foto" class="img-card-custom img-fluid">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $advertisement->title }}</h5>
@@ -34,7 +31,7 @@
 
                                     <div class="d-flex justify-content-end w-100 mt-3">
                                         <a href="{{ route('categoryShow', $advertisement->category) }}"
-                                            class="btn btn-custom">{{ __('ui.Category') }}
+                                            class="btn btn-custom ">{{ __('ui.Category') }}
                                             {{ __('ui.' . $advertisement->category->name) }}</a>
                                     </div>
                                 </div>
@@ -42,11 +39,17 @@
                         </a>
                     </div>
                 @empty
-                <div class="col-12 mt-5">
-                    <div class="alert alert-warning py-3 shadow">
-                        <p class="lead">Non ci sono risultati per questa ricerca </p>
+                    <div class="col-12 col-md-6 mt-3">
+                        <div class="alert-custom  py-3 shadow">
+                            <h3 class="no-adv-title text-center p-3">{{ __('ui.noAdvertisementSearch') }} <img
+                                    src="/media/sad-face_icon.png" alt="" class="sad-icon"></h3>
+                            <h3 class="publish-adv-title text-center">{{ __('ui.publishAdvertisement') }} <a
+                                    href="{{ route('advertisement.create') }}"
+                                    class=" text-decoration-none text-reset"> <img src="/media/adv_icon.png"
+                                        class="adv-icon" alt=""></a></h3>
+
+                        </div>
                     </div>
-                </div>
                 @endforelse
                 <div class="col-12 mt-5 mb-5">
                     {{ $advertisements->links() }}

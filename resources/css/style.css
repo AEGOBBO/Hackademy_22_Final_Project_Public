@@ -10,9 +10,11 @@
     --orangedark: #e39906;
     --orangelight: #ffbf69;
     --yellow: #f3fc46;
+    --yellowtransp: #f3fc4620;
     --yellowlight: #ffef9f;
     --cream: #faf8f2;
     --bluedark: #012A4A;
+    --bluedarktransp: #012a4a49;
     --blue: #013A63;
     --cobalt: #01497C;
     --cobaltlight: #014F86;
@@ -77,12 +79,9 @@ body{
     top: -100px;
 }
 
-
-
 .title-index-pages{
     font-family: "Rock Salt", cursive;
     text-shadow: 2px 2px 3px var(--yellow);
-
 }
 
 .no-adv-title{
@@ -95,7 +94,23 @@ body{
     text-shadow: 2px 2px 3px var(--blue);
 }
 
+.register-title{
+    color: var(--orangedark);   
+    text-shadow: 2px 2px 3px var(--blue);
+}
+
 .card-text-custom{
     color: var(--orangedark);   
     text-shadow: 2px 2px 3px var(--blue);
+}
+
+.form-custom{
+    background-color: var(--bluedarktransp);
+    border-radius: 10px;
+}
+
+.alert-custom{
+    background-color: var(--yellowtransp);
+    box-shadow: 1px 1px 8px 1px var(--ceruleolight);
+    border-radius: 10px;
 }

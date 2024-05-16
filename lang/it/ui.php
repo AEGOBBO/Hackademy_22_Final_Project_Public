@@ -65,4 +65,5 @@ return [
     'violenceContent'=> 'Violenza',
     'racyContent'=> 'Audace',
     'search' => 'Ricerca',
+    'noAdvertisementSearch' => 'Non ci sono annunci per questa ricerca',
 ];
