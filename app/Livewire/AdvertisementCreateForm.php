@@ -36,7 +36,7 @@ class AdvertisementCreateForm extends Component
         'description'=>'required|min:3|max:8000',
         'price'=>'required|numeric|gt:0',
         'category'=>'required',
-        'images.*'=>'image|max:1536',
+        'images.*'=>'required|image|max:1536',
         'temporary_images.*'=>'image|max:1536',
         ];
 

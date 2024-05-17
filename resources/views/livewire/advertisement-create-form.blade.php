@@ -17,48 +17,48 @@
                         for="title">{{ __('ui.titleAdvertisement') }}</label>
                     <input type="text" id="title" class="form-control " wire:model.blur="title" />
                     @error('title')
-                        {{ $message }}
-                    @enderror
-                </div>
-                <!-- DESCRIZIONE -->
-                <div data-mdb-input-init class="form-outline mb-3">
-                    <label class="form-label card-text-custom fs-4"
+                        <span class="error-message">{{ $message }}</span> 
+                        @enderror
+                    </div>
+                    <!-- DESCRIZIONE -->
+                    <div data-mdb-input-init class="form-outline mb-3">
+                        <label class="form-label card-text-custom fs-4"
                         for="description">{{ __('ui.descriptionAdvertisement') }}</label>
-                    <textarea class="form-control " id="description" rows="4" wire:model.blur="description"></textarea>
+                        <textarea class="form-control " id="description" rows="4" wire:model.blur="description"></textarea>
                     @error('description')
-                        {{ $message }}
-                    @enderror
-                </div>
-                <!-- PREZZO -->
-                <div data-mdb-input-init class="form-outline mb-3">
-                    <label class="form-label card-text-custom fs-4"
+                        <span class="error-message">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <!-- PREZZO -->
+                    <div data-mdb-input-init class="form-outline mb-3">
+                        <label class="form-label card-text-custom fs-4"
                         for="price">{{ __('ui.priceAdvertisement') }}</label>
-                    <input type="number" id="price" class="form-control " wire:model.blur="price" />
+                        <input type="number" id="price" class="form-control " wire:model.blur="price" />
                     @error('price')
-                        {{ $message }}
-                    @enderror
-                </div>
-                <!-- CATEGORIA -->
-                <div data-mdb-input-init class="form-outline mb-4">
-                    <select wire:model.defer="category" id="category" class="form-control card-text-custom fs-5 mt-5">
-                        <option value="">{{ __('ui.chooseCategory') }}</option>
-                        @foreach ($categories as $category)
+                        <span class="error-message">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <!-- CATEGORIA -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <select wire:model.defer="category" id="category" class="form-control card-text-custom fs-5 mt-5">
+                            <option value="">{{ __('ui.chooseCategory') }}</option>
+                            @foreach ($categories as $category)
                             <option value="{{ $category->id }}">
                                 {{ __('ui.' . $category->name) }}
                             </option>
-                        @endforeach
+                            @endforeach
                     </select>
                 </div>
-
+                
                 <!-- IMMAGINE -->
                 <div data-mdb-input-init class="form-outline mb-4">
                     <label class="form-label card-text-custom fs-4"
-                        for="temporary_images">{{ __('ui.imageAdvertisement') }}</label>
+                    for="temporary_images">{{ __('ui.imageAdvertisement') }}</label>
                     <input type="file" id="temporary_images" multiple
-                        class="form-control @error('temporary_images.*') is-invalid @enderror"
-                        wire:model="temporary_images" placeholder="Inserisci le immagini qui" />
+                    class="form-control @error('temporary_images.*') is-invalid @enderror"
+                    wire:model="temporary_images" placeholder="Inserisci le immagini qui" />
                     @error('temporary_images')
-                        {{ $message }}
+                        <span class="error-message">{{ $message }}</span>
                     @enderror
                 </div>
                 @if (!empty($images))

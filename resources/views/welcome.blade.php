@@ -30,7 +30,7 @@
                         <img src="{{ !$advertisement->images()->get()->isEmpty() ? $advertisement->images()->first()->getUrl(400,300) : 'https://picsum.photos/346' }}" alt="foto" class="img-card-custom">
                         <div class="card-body">
                             <h5 class="card-title">{{ $advertisement->title }}</h5>
-                            <p class="card-text">{{ $advertisement->price }}</p>
+                            <p class="card-text">{{ $advertisement->price }} &euro; </p>
                             <p class="card-text">{{ Str::limit($advertisement->description, 80) }}</p>
 
                             <div class="d-flex justify-content-end w-100 mt-3">

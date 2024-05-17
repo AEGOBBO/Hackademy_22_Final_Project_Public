@@ -54,7 +54,7 @@
                                 data-bs-toggle="dropdown" aria-expanded="false">{{ __('ui.welcome') }}
                                 {{ Auth::user()->name }}
                                 <img src="/media/surfboard_icon.png" class="profile-icon">
-                                @if (App\Models\Advertisement::toBeRevisonedCount())
+                                @if (App\Models\Advertisement::toBeRevisonedCount() && Auth::user()->is_revisor)
                                     <span
                                         class="position-absolute top-0 start-75 translate-middle-relative">{{ App\Models\Advertisement::toBeRevisonedCount() }}
                                         <span class="visually-hidden">{{ __('ui.allUnreadMessages') }}</span>

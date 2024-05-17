@@ -27,7 +27,7 @@ class PublicController extends Controller
 
     public function searchAdvertisements(Request $request){
         $advertisements = Advertisement::search($request->searched)->where('is_accepted', true)->simplePaginate(9);
-
-        return view('advertisement.index', compact('advertisements'));
+        $searched=$request->searched;
+        return view('advertisement.index', compact('advertisements', 'searched'));
     }
 }

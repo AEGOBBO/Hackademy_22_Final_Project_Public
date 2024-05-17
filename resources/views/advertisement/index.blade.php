@@ -5,6 +5,9 @@
                 <div class="row">
                     <div class="col-12">
                         <h1 class="text-center title-index-pages p-5">{{ __('ui.allAdvertisements') }}</h1>
+                        @if (!empty($searched))
+                            <h2 class="text-center">Ecco i risultati per la ricerca "{{$searched}}" </h2>                            
+                        @endif
                     </div>
                 </div>
             </div>
@@ -26,7 +29,7 @@
                                     alt="foto" class="img-card-custom img-fluid">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $advertisement->title }}</h5>
-                                    <p class="card-text">{{ $advertisement->price }}</p>
+                                    <p class="card-text">{{ $advertisement->price }} &euro; </p>
                                     <p class="card-text">{{ Str::limit($advertisement->description, 80) }}</p>
 
                                     <div class="d-flex justify-content-end w-100 mt-3">

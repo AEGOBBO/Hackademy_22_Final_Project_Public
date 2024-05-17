@@ -17,7 +17,7 @@
                         for="title">{{ __('ui.titleAdvertisement') }}</label>
                     <input type="text" id="title" class="form-control " wire:model.blur="title" />
                     @error('title')
-                        {{ $message }}
+                        <span class="error-message">{{ $message }}</span>
                     @enderror
                 </div>
                 <!-- DESCRIZIONE -->
@@ -26,7 +26,7 @@
                         for="description">{{ __('ui.descriptionAdvertisement') }}</label>
                     <textarea class="form-control " id="description" rows="4" wire:model.blur="description"></textarea>
                     @error('description')
-                        {{ $message }}
+                        <span class="error-message">{{ $message }}</span>
                     @enderror
                 </div>
                 <!-- PREZZO -->
@@ -35,7 +35,7 @@
                         for="price">{{ __('ui.priceAdvertisement') }}</label>
                     <input type="number" id="price" class="form-control " wire:model.blur="price" />
                     @error('price')
-                        {{ $message }}
+                        <span class="error-message">{{ $message }}</span>
                     @enderror
                 </div>
                 <!-- CATEGORIA -->
@@ -58,7 +58,7 @@
                         class="form-control @error('temporary_images.*') is-invalid @enderror"
                         wire:model="temporary_images" placeholder="{{ __('ui.insertImages') }}" />
                     @error('temporary_images')
-                        {{ $message }}
+                        <span class="error-message">{{ $message }}</span>
                     @enderror
                 </div>
                 @if (!empty($images))

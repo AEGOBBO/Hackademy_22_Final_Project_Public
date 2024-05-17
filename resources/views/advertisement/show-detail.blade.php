@@ -52,7 +52,7 @@
                             <div class="d-flex flex-column justify-content-center">
                                 <h5 class="card-title fs-4 fw-bold">{{ $advertisement->title }}</h5>
                                 <p class="card-text fs-5 fw-bold pt-2">{{ __('ui.priceAdvertisement') }}:
-                                    {{ $advertisement->price }}</p>
+                                    {{ $advertisement->price }} &euro; </p>
                                 <p class="card-text fs-5">{{ $advertisement->description }}</p>
                                 <div>
                                     <a href="{{ route('categoryShow', $advertisement->category) }}"
