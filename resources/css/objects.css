@@ -67,7 +67,7 @@
 }
 
 .card{
-    width: 400px;
+    /* width: 400px;  */
     border: none;
     box-shadow: 2px 2px 16px 2px var(--cream);
     border-radius: 11px;

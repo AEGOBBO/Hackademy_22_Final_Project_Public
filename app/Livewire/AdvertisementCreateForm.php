@@ -23,7 +23,7 @@ class AdvertisementCreateForm extends Component
     // #[Validate('required|min:3|max:8000')]
     public $description;
     public $temporary_images;
-    public $images=[];
+    public $images = [];
     public $image;
     // #[Validate('required|numeric|gt:0')]
     public $price;
@@ -66,7 +66,7 @@ class AdvertisementCreateForm extends Component
         $this->validate();
 
         //$category=Category::find($this->category);
-        $this->advertisement=Category::find($this->category)->advertisements()->create($this->validate());
+        $this->advertisement = Category::find($this->category)->advertisements()->create($this->validate());
         if(count($this->images)){
             foreach($this->images as $image){
                 // $this->advertisement->images()->create(['path'=>$image->store('images', 'public')];

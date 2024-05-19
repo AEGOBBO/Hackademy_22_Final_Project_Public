@@ -15,7 +15,8 @@
                         <div class="carousel-inner">
                             @foreach ($advertisement->images as $image)
                                 <div class="carousel-item @if ($loop->first) active @endif text-center">
-                                    <img src="{{ Storage::url($image->path) }}" class="img-fluid" alt="immagine">
+                                    {{-- <img src="{{ Storage::url($image->path) }}" class="img-fluid" alt="immagine"> --}}
+                                    <img src="{{ $image->getUrl(400, 300) }}" class="img-fluid" alt="immagine">
                                 </div>
                             @endforeach
                         </div>
@@ -57,6 +58,17 @@
                                 <div>
                                     <a href="{{ route('categoryShow', $advertisement->category) }}"
                                         class="btn btn-custom">{{ $advertisement->category->name }}</a>
+                                        {{-- EDIT BUTTON --}}
+                                        <!-- Submit button -->
+                                        @if (Auth::user()->id == $advertisement->user->id)
+                                            {{-- <div class=" d-flex justify-content-end mt-3"> --}}
+                                                <a role="button" href="{{ route('advertisement.edit', $advertisement) }}"
+                                                    class="btn btn-custom">{{ __('ui.editButtonAdvertisement') }}</a>
+                                            {{-- </div> --}}
+                                            {{-- <div class=" d-flex justify-content-end mt-3">
+                                                <a wire:click="destroy({{$advertisement}})" class="btn btn-reject">{{ __('ui.deleteButtonAdvertisement') }}</a>
+                                            </div> --}}
+                                        @endif                                
                                 </div>
                                 <p class="mt-5">Pubblicato {{ $advertisement->created_at->diffForHumans() }} <br>
                                     <span>Da {{ $advertisement->user->name ?? '' }}</span>
@@ -65,17 +77,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- EDIT BUTTON --}}
-                <!-- Submit button -->
-                @if (Auth::user()->id == $advertisement->user->id)
-                    <div class=" d-flex justify-content-end mt-3">
-                        <a role="button" href="{{ route('advertisement.edit', $advertisement) }}"
-                            class="btn btn-custom fs-5 btn-block mt-4">{{ __('ui.editButtonAdvertisement') }}</a>
-                    </div>
-                    {{-- <div class=" d-flex justify-content-end mt-3">
-                        <a wire:click="destroy({{$advertisement}})" class="btn btn-reject">{{ __('ui.deleteButtonAdvertisement') }}</a>
-                    </div> --}}
-                @endif
             </div>
         </div>
     </main>
