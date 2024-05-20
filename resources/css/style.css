@@ -43,7 +43,7 @@ body{
 
 .latestAdv-title{
     font-family: "Kalam", cursive;
-
+    text-shadow: 2px 2px 3px var(--blue);
 }
 
 .my-container-wave{

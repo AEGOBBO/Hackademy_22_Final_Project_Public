@@ -54,7 +54,7 @@ class AdvertisementController extends Controller
         if (Auth::user()->id == $advertisement->user->id) {
             return view('advertisement.edit', compact('advertisement'));
         }
-        return redirect()->back()->with('message', 'Non puoi modificare l\'annuncio');
+        return redirect()->back()->with('message', __('ui.cannotModify'));
     }
 
     /**
@@ -71,6 +71,6 @@ class AdvertisementController extends Controller
     public function destroy(Advertisement $advertisement)
     {
         $advertisement->delete();
-        return redirect(route('home'))->with('message', 'Annuncio eliminato con successo!');
+        return redirect(route('home'))->with('message', __('ui.deleteSuccess'));
     }
 }

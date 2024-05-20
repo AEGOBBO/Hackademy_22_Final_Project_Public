@@ -69,4 +69,13 @@ return [
     'editButtonAdvertisement'=> 'Edit',
     'insertImages' => 'Insert images here',
     'deleteButtonAdvertisement' => 'Delete',
+    'cardPublished' => 'Published',
+    'cannotModify' => 'You can\'t edit this advertisement',
+    'deleteSuccess' => 'Advertisement deleted successfully',
+    'advAccepted' => 'Advertisement accepted',
+    'advNotAccepted' => 'Advertisement not accepted',
+    'revisorBadRequest' => 'Your request failed to complete, please retry',
+    'revisorSendRequest' => 'Request sent successfully',
+    'revisorBecomeMessage' => 'Congratulations! This user has become revisor',
+
 ];

@@ -24,12 +24,12 @@ class RevisorController extends Controller
     
     public function acceptAdevertisement(Advertisement $advertisement){
         $advertisement->setAccepted(true);
-        return redirect()->back()->with('message' ,'Annuncio accettato');
+        return redirect()->back()->with('message', __('ui.advAccepted'));
     }
 
     public function rejectAdevertisement(Advertisement $advertisement){
         $advertisement->setAccepted(false);
-        return redirect()->back()->with('message' ,'Annuncio non accettato');
+        return redirect()->back()->with('message', __('ui.advNotAccepted'));
     }
 
     public function becomeRevisor(){
@@ -40,13 +40,13 @@ class RevisorController extends Controller
         try {
             Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
         } catch (\Throwable $th) {
-            return redirect()->back()->with('message', 'La tua richiesta non è andata a buon fine. Ritenta più tardi.');
+            return redirect()->back()->with('message', __('ui.revisorBadRequest'));
         }
-        return redirect('/')->with('message', 'La tua richiesta è stata inoltrata con successo');
+        return redirect('/')->with('message', __('ui.revisorSendRequest'));
     }
 
     public function makeRevisor(User $user){
         Artisan::call('presto:makeUserRevisor', ["email" => $user->email]);
-        return redirect('/')->with('message', 'Complimenti! L\'utente è diventato revisore');
+        return redirect('/')->with('message', __('ui.revisorBecomeMessage'));
     }
 }

@@ -32,13 +32,15 @@
                             <h5 class="card-title">{{ $advertisement->title }}</h5>
                             <p class="card-text">{{ $advertisement->price }} &euro; </p>
                             <p class="card-text">{{ Str::limit($advertisement->description, 80) }}</p>
-
-                            <div class="d-flex justify-content-end w-100 mt-3">
-                                <a href="{{ route('categoryShow', $advertisement->category) }}"
-                                    class="btn btn-custom"> {{ __('ui.Category') }}
-                                    {{ __('ui.' . $advertisement->category->name) }}</a>
-                            </div>
                         </div>
+                        <div class="card-footer d-flex justify-content-between align-items-center mt-3">
+                            <div class="d-flex">
+                                <p class="align-items-center">{{__('ui.cardPublished')}} {{ $advertisement->created_at->format('d-m-Y H:i') }}</p>
+                            </div>
+                            <div>
+                                <a href="{{ route('categoryShow', $advertisement->category) }}" class="btn btn-custom">{{ __('ui.' . $advertisement->category->name) }}</a>
+                            </div>
+                        </div>                        
                     </div>
                 </a>
             </div>

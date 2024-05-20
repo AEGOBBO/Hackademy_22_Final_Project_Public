@@ -69,4 +69,12 @@ return [
     'editButtonAdvertisement'=> 'Editar',
     'insertImages' => 'Selecciona las imagenes aqui',
     'deleteButtonAdvertisement' => 'Borrar',
+    'cardPublished' => 'Publicado',
+    'cannotModify' => 'No puedes modificar este anuncio',
+    'deleteSuccess' => 'Anuncio eliminado correctamente',
+    'advAccepted' => 'Anuncio aceptado',
+    'advNotAccepted' => 'Anuncio no aceptado',
+    'revisorBadRequest' => 'Su solicitud no se pudo completar, vuelva a intentarlo',
+    'revisorSendRequest' => 'Solicitud enviada con exito',
+    'revisorBecomeMessage' => '¡Felicidades! El usuario se ha convertido en revisor',
 ];
