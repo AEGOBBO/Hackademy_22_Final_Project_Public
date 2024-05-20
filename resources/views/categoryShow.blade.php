@@ -42,7 +42,7 @@
                     </a>
                 </div>
                 @empty
-                <div class="col-12 col-md-6 alert-custom p-5 text-center">
+                <div class="col-12 col-md-6 p-5 text-center">
                     <h3 class="no-adv-title pb-5">{{__('ui.noAdvertisement')}} <img src="/media/sad-face_icon.png" alt="" class="sad-icon"></h3>
                     <h3 class="publish-adv-title">{{__('ui.publishAdvertisement')}} <a href="{{route('advertisement.create')}}" class=" text-decoration-none text-reset"> <img src="/media/adv_icon.png" class="adv-icon" alt=""></a></h3>
                 </div>

@@ -36,7 +36,7 @@
             <div class="w-25 d-flex justify-content-center align-items-center">
                 <a class="navbar-brand" href="{{ route('home') }}">
                     <span class="nav-logo">
-                        <img src="/media/flowtter logo.png" class="my-logo-nav">
+                        <img src="/media/flowtter_logo.png" class="my-logo-nav">
                     </span>
                 </a>
             </div>

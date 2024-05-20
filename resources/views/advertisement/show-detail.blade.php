@@ -55,24 +55,29 @@
                                 <p class="card-text fs-5 fw-bold pt-2">{{ __('ui.priceAdvertisement') }}:
                                     {{ $advertisement->price }} &euro; </p>
                                 <p class="card-text fs-5">{{ $advertisement->description }}</p>
-                                <div>
-                                    <a href="{{ route('categoryShow', $advertisement->category) }}"
-                                        class="btn btn-custom">{{ $advertisement->category->name }}</a>
-                                        {{-- EDIT BUTTON --}}
-                                        <!-- Submit button -->
-                                        @if (Auth::user()->id == $advertisement->user->id)
-                                            {{-- <div class=" d-flex justify-content-end mt-3"> --}}
+                                {{-- EDIT / DELETE BUTTON--}}
+                                @auth    
+                                    @if (Auth::user()->id == $advertisement->user->id)
+                                        <div class="d-flex justify-content-between">
+                                            <div>
                                                 <a role="button" href="{{ route('advertisement.edit', $advertisement) }}"
-                                                    class="btn btn-custom">{{ __('ui.editButtonAdvertisement') }}</a>
-                                            {{-- </div> --}}
-                                            {{-- <div class=" d-flex justify-content-end mt-3">
-                                                <a wire:click="destroy({{$advertisement}})" class="btn btn-reject">{{ __('ui.deleteButtonAdvertisement') }}</a>
-                                            </div> --}}
-                                        @endif                                
-                                </div>
+                                                    class="btn btn-custom-modify">{{ __('ui.editButtonAdvertisement') }}</a>
+                                            </div>
+                                            <form action="{{route('advertisement.delete', compact('advertisement'))}}" method="POST">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="btn btn-reject">{{ __('ui.deleteButtonAdvertisement') }}</button>
+                                            </form>
+                                        </div>
+                                    @endif                                
+                                @endauth 
                                 <p class="mt-5">Pubblicato {{ $advertisement->created_at->diffForHumans() }} <br>
                                     <span>Da {{ $advertisement->user->name ?? '' }}</span>
                                 </p>
+                                <div class="w-100 text-end">
+                                    <a href="{{ route('categoryShow', $advertisement->category) }}"
+                                        class="btn btn-custom">{{ $advertisement->category->name }}</a>  
+                                </div>                            
                             </div>
                         </div>
                     </div>

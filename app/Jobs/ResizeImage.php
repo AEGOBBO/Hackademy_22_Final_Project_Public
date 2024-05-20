@@ -41,6 +41,10 @@ class ResizeImage implements ShouldQueue
         $srcPath = storage_path() . '/app/public/' . $this->path . '/' . $this->fileName;
         $destPath = storage_path() . '/app/public/' . $this->path . "/crop_{$w}x{$h}_" . $this->fileName;
 
-        $croppedImage = Image::load($srcPath)->crop(Manipulations::CROP_CENTER, $w, $h)->save($destPath);
+        $croppedImage = Image::load($srcPath)->crop(Manipulations::CROP_CENTER, $w, $h)->watermark(base_path('public/media/flowtter_logo.png'))
+                                                                                       ->watermarkOpacity(50)
+                                                                                       ->watermarkHeight(20, Manipulations::UNIT_PERCENT)
+                                                                                       ->watermarkWidth(30, Manipulations::UNIT_PERCENT)
+                                                                                       ->save($destPath);
     }
 }

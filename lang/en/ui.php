@@ -68,4 +68,5 @@ return [
     'noAdvertisementSearch' => 'No advertisement for this search',
     'editButtonAdvertisement'=> 'Edit',
     'insertImages' => 'Insert images here',
+    'deleteButtonAdvertisement' => 'Delete',
 ];

@@ -18,10 +18,12 @@
                             <h4 class="tc-accent card-text-custom text-end pb-3 px-5">Tags</h4>
                         </div>
                         <div class="px-5">
-                            @if ($advertisement_to_check->images->first->get()->labels)
-                                @foreach ($advertisement_to_check->images->first->get()->labels as $label)
-                                    <p class="text-end">{{ $label }}</p>
-                                @endforeach
+                            @if (count($advertisement_to_check->images))                                
+                                @if ($advertisement_to_check->images->first->get()->labels)
+                                    @foreach ($advertisement_to_check->images->first->get()->labels as $label)
+                                        <p class="text-end">{{ $label }}</p>
+                                    @endforeach
+                                @endif
                             @endif
                         </div>
                     </div>
@@ -79,19 +81,21 @@
                     {{-- SAFE SEARCH --}}
                     <div class="col-12 col-md-3">
                         <div class="card-body">
-                            <h4 class="tc-accent card-text-custom pb-3 mx-5">{{ __('ui.imagesReview') }}</h4>
-                            <p class="px-5">{{ __('ui.adultContent') }} : <span
-                                    class="{{ $advertisement_to_check->images->first->get()->adult }}"></span>
-                            </p>
-                            <p class="px-5">{{ __('ui.spoofContent') }} : <span
-                                    class="{{ $advertisement_to_check->images->first->get()->spoof }}"></span>
-                            </p>
-                            <p class="px-5">{{ __('ui.medicalContent') }} : <span
-                                    class="{{ $advertisement_to_check->images->first->get()->medical }}"></span></p>
-                            <p class="px-5">{{ __('ui.violenceContent') }} : <span
-                                    class="{{ $advertisement_to_check->images->first->get()->violence }}"></span></p>
-                            <p class="px-5">{{ __('ui.racyContent') }} : <span
-                                    class="{{ $advertisement_to_check->images->first->get()->racy }}"></span></p>
+                            @if (count($advertisement_to_check->images))   
+                                <h4 class="tc-accent card-text-custom pb-3 mx-5">{{ __('ui.imagesReview') }}</h4>
+                                <p class="px-5">{{ __('ui.adultContent') }} : <span
+                                        class="{{ $advertisement_to_check->images->first->get()->adult }}"></span>
+                                </p>
+                                <p class="px-5">{{ __('ui.spoofContent') }} : <span
+                                        class="{{ $advertisement_to_check->images->first->get()->spoof }}"></span>
+                                </p>
+                                <p class="px-5">{{ __('ui.medicalContent') }} : <span
+                                        class="{{ $advertisement_to_check->images->first->get()->medical }}"></span></p>
+                                <p class="px-5">{{ __('ui.violenceContent') }} : <span
+                                        class="{{ $advertisement_to_check->images->first->get()->violence }}"></span></p>
+                                <p class="px-5">{{ __('ui.racyContent') }} : <span
+                                        class="{{ $advertisement_to_check->images->first->get()->racy }}"></span></p>
+                            @endif
                         </div>
                     </div>
                 </div>

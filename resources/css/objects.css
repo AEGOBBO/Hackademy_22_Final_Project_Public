@@ -67,7 +67,6 @@
 }
 
 .card{
-    /* width: 400px;  */
     border: none;
     box-shadow: 2px 2px 16px 2px var(--cream);
     border-radius: 11px;
@@ -76,6 +75,12 @@
 
 .card:hover{
     transform: translateY(-7px);
+}
+
+.btn-custom-modify{
+    color: var(--cobalt);
+    background-color: var(--orangelight);
+    border-radius: 50px;
 }
 
 .footer-title-custom{

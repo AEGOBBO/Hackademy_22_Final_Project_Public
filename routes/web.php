@@ -41,3 +41,6 @@ Route::post('/lingua/{lang}',[PublicController::class,'setLanguage'])->name('set
 
 //Ricerca annuncio
 Route::get('/search/advertisement', [PublicController::class, 'searchAdvertisements'])->name('advertisements.search');
+
+// Eliminazione articolo
+Route::delete('/advertisement/delete/{advertisement}', [AdvertisementController::class, 'destroy'])->name('advertisement.delete');

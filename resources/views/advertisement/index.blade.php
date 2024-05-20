@@ -6,7 +6,7 @@
                     <div class="col-12">
                         <h1 class="text-center title-index-pages p-5">{{ __('ui.allAdvertisements') }}</h1>
                         @if (!empty($searched))
-                            <h2 class="text-center">Ecco i risultati per la ricerca "{{$searched}}" </h2>                            
+                            <h2 class="text-center no-adv-title">Ecco i risultati per la ricerca "{{$searched}}" </h2>                            
                         @endif
                     </div>
                 </div>

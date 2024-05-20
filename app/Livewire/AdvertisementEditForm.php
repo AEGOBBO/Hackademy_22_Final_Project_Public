@@ -71,10 +71,14 @@ class AdvertisementEditForm extends Component
             'title' => $this->title,
             'description' => $this->description,
             'price' => $this->price,
-            'image' => $this->image ? $this->image : $this->advertisement->image,
             'category' => $this->category,
             'is_accepted'=> null,
         ]);
+
+        // Devo prima eliminare le immagini esistenti
+        if (count($this->images)) {
+            $this->advertisement->images()->delete();
+        }
 
         if(count($this->images)){
             foreach($this->images as $image){
@@ -82,6 +86,7 @@ class AdvertisementEditForm extends Component
                     $newFileName = "advertisements/{$this->advertisement->id}";
                     $newImage = $this->advertisement->images()->create(['path'=>$image->store($newFileName, 'public')]);
 
+                    // Ora inserisco le nuove immagini
                     RemoveFaces::withChain([
                         new ResizeImage($newImage->path, 400, 300),
                         new GoogleVisionSafeSearch($newImage->id),
@@ -92,7 +97,7 @@ class AdvertisementEditForm extends Component
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
 
-        session()->flash('message', 'Annuncio modificato con successo!');
+        session()->flash('message', 'Annuncio modificato con successo! Attendi la revisione');
         $this->reset('image');
     }
     
@@ -110,6 +115,12 @@ class AdvertisementEditForm extends Component
         }
     }
 
+    public function destroy(Advertisement $advertisement)
+    {
+        $advertisement->delete();
+        session()->flash('message', 'Annuncio eliminato con successo!');
+    }
+    
     public function render()
     {
         return view('livewire.advertisement-edit-form');
