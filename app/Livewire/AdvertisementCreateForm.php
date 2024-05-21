@@ -91,7 +91,7 @@ class AdvertisementCreateForm extends Component
             'user_id' => Auth::id(),
         ]);
 
-        session()->flash('message', 'Annuncio inserito correttamente!');
+        session()->flash('message', __('ui.advUploaded'));
 
         $this->reset();
     }

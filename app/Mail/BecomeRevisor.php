@@ -9,6 +9,7 @@ use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 
@@ -17,12 +18,15 @@ class BecomeRevisor extends Mailable
     use Queueable, SerializesModels;
 
     public $user;
+    public $description;
+
     /**
      * Create a new message instance.
      */
-    public function __construct(User $user)
+    public function __construct(User $user, $description)
     {
         $this->user = $user;
+        $this->description = $description;
     }
 
     /**

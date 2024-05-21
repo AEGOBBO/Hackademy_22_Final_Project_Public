@@ -10,6 +10,14 @@
                         {{ session('message') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
+                @else
+                    @if (session('denied'))
+                        <div class="alert alert-danger text-center">
+                            {{ session('denied') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                    @endif
                 @endif
                 <!-- NOME -->
                 <div data-mdb-input-init class="form-outline mb-4">
@@ -32,15 +40,17 @@
                 </div>
                 <!-- RICHIESTA -->
                 <div data-mdb-input-init class="form-outline mb-4">
-                    <label class="form-label card-text-custom fs-4" for="request">{{ __('ui.workWithUsDesc') }}</label>
-                    <textarea class="form-control" id="request" rows="4" name="request"></textarea>
-                    @error('request')
+                    <label class="form-label card-text-custom fs-4"
+                        for="description">{{ __('ui.workWithUsDesc') }}</label>
+                    <textarea class="form-control" id="description" rows="4" name="description"></textarea>
+                    @error('description')
                         {{ $message }}
                     @enderror
                 </div>
                 <!-- Submit button -->
                 <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn btn-custom btn-block fs-5 m-2">{{ __('ui.workWithUsSend') }}</button>
+                    <button type="submit"
+                        class="btn btn-custom btn-block fs-5 m-2">{{ __('ui.workWithUsSend') }}</button>
                 </div>
             </form>
         </div>

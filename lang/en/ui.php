@@ -77,5 +77,9 @@ return [
     'revisorBadRequest' => 'Your request failed to complete, please retry',
     'revisorSendRequest' => 'Request sent successfully',
     'revisorBecomeMessage' => 'Congratulations! This user has become revisor',
-
+    'advUploaded' => 'Advertisement uploaded successfully',
+    'advEdited' => 'Advertisement edited successfully. Pending review.',
+    'searchResults' => 'Here results for your research',
+    'advDetail' => 'Advertisement detail for',
+    'by' => 'By',
 ];

@@ -97,7 +97,7 @@ class AdvertisementEditForm extends Component
             File::deleteDirectory(storage_path('/app/livewire-tmp'));
         }
 
-        session()->flash('message', 'Annuncio modificato con successo! Attendi la revisione');
+        session()->flash('message', __('ui.advEdited'));
         $this->reset('image');
     }
     
@@ -118,7 +118,7 @@ class AdvertisementEditForm extends Component
     public function destroy(Advertisement $advertisement)
     {
         $advertisement->delete();
-        session()->flash('message', 'Annuncio eliminato con successo!');
+        session()->flash('message', __('ui.deleteSuccess'));
     }
     
     public function render()

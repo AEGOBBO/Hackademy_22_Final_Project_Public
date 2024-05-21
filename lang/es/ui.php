@@ -77,4 +77,9 @@ return [
     'revisorBadRequest' => 'Su solicitud no se pudo completar, vuelva a intentarlo',
     'revisorSendRequest' => 'Solicitud enviada con exito',
     'revisorBecomeMessage' => '¡Felicidades! El usuario se ha convertido en revisor',
+    'advUploaded' => 'Anuncio subido correctamente',
+    'advEdited' => 'Anuncio modificado correctamente. Espera su revision.',
+    'searchResults' => 'Aqui los resultados para la busqueda',
+    'advDetail' => 'Detalles del anuncio',
+    'by' => 'De',
 ];

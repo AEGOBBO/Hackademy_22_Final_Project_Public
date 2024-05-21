@@ -2,7 +2,7 @@
     <header class="container pt-5">
         <div class="row">
             <div class="col-12 p-5">
-                <h1 class="title-index-pages text-center p-3">Dettagli per l'annuncio {{ $advertisement->title }}</h1>
+                <h1 class="title-index-pages text-center p-3">{{ __('ui.advDetail') }} {{ $advertisement->title }}</h1>
             </div>
         </div>
     </header>
@@ -55,29 +55,32 @@
                                 <p class="card-text fs-5 fw-bold pt-2">{{ __('ui.priceAdvertisement') }}:
                                     {{ $advertisement->price }} &euro; </p>
                                 <p class="card-text fs-5">{{ $advertisement->description }}</p>
-                                {{-- EDIT / DELETE BUTTON--}}
-                                @auth    
+                                {{-- EDIT / DELETE BUTTON --}}
+                                @auth
                                     @if (Auth::user()->id == $advertisement->user->id)
                                         <div class="d-flex justify-content-between">
                                             <div>
                                                 <a role="button" href="{{ route('advertisement.edit', $advertisement) }}"
                                                     class="btn btn-custom-modify">{{ __('ui.editButtonAdvertisement') }}</a>
                                             </div>
-                                            <form action="{{route('advertisement.delete', compact('advertisement'))}}" method="POST">
+                                            <form action="{{ route('advertisement.delete', compact('advertisement')) }}"
+                                                method="POST">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="submit" class="btn btn-reject">{{ __('ui.deleteButtonAdvertisement') }}</button>
+                                                <button type="submit"
+                                                    class="btn btn-reject">{{ __('ui.deleteButtonAdvertisement') }}</button>
                                             </form>
                                         </div>
-                                    @endif                                
-                                @endauth 
-                                <p class="mt-5">Pubblicato {{ $advertisement->created_at->diffForHumans() }} <br>
-                                    <span>Da {{ $advertisement->user->name ?? '' }}</span>
+                                    @endif
+                                @endauth
+                                <p class="mt-5">{{ __('ui.cardPublished') }}
+                                    {{ $advertisement->created_at->diffForHumans() }} <br>
+                                    <span>{{ __('ui.by') }} {{ $advertisement->user->name ?? '' }}</span>
                                 </p>
                                 <div class="w-100 text-end">
                                     <a href="{{ route('categoryShow', $advertisement->category) }}"
-                                        class="btn btn-custom">{{ $advertisement->category->name }}</a>  
-                                </div>                            
+                                        class="btn btn-custom">{{ $advertisement->category->name }}</a>
+                                </div>
                             </div>
                         </div>
                     </div>

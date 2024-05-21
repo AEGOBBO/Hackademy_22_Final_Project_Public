@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use App\Models\User;
 use App\Mail\BecomeRevisor;
 use Illuminate\Http\Request;
@@ -36,11 +37,11 @@ class RevisorController extends Controller
         return view('revisor.become');
     }
 
-    public function requestRevisor(){
+    public function requestRevisor(Request $request){
         try {
-            Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
-        } catch (\Throwable $th) {
-            return redirect()->back()->with('message', __('ui.revisorBadRequest'));
+            Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user(), $request->description));
+        } catch (Exception $th) {
+            return redirect()->back()->with('denied', __('ui.revisorBadRequest'));
         }
         return redirect('/')->with('message', __('ui.revisorSendRequest'));
     }
